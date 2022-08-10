@@ -15,3 +15,5 @@ describe('empty spec', () => {
     })
   })
 })
+
+export {}

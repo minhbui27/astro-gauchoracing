@@ -1,4 +1,3 @@
-import { css } from 'cypress/types/jquery'
 import * as React from 'react'
 import { useState } from 'react'
 const Nav = (): JSX.Element => {
