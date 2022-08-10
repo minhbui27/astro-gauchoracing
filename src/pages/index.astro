@@ -1,7 +1,30 @@
 ---
-import Layout from '../components/Layout.astro';
+import Nav from '../components/Nav'
 ---
 
-<Layout title="Astro Quickstart">
-Test
-</Layout>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<title>Minh's Website</title>
+</head>
+
+<body>
+	<Nav client:load/>
+</body>
+
+</html>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+	body {
+		background-color: rgb(17, 24, 39);
+	}
+
+	h1 {
+		font-size: 1.5rem;
+	}
+</style>
