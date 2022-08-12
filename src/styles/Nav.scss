@@ -1,3 +1,8 @@
+$lightgray: #DCE1E5;
+$seagreenweb: #09847A;
+$aquaweb: #047C91;
+$mist: #9CBEBE;
+$lightgraydarken: #111517;
 @font-face {
   font-family: 'Poppins-Medium';
   src: url(/Poppins-Medium.ttf) format('truetype');
@@ -14,5 +19,5 @@
 	color: #F4D35E;
 }
 .navbarColor {
-	background-color: #083D77;
+	background-color: $aquaweb;
 }

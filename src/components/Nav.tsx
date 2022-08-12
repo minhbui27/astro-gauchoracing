@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useState } from 'react'
-import '../style/Nav.scss'
+import '../styles/Nav.scss'
+import logo from '/logo-gold.png'
 interface NavProps {
   currentPage: string
 }
@@ -10,9 +11,9 @@ export default function Nav(props: NavProps) {
   console.log(props.currentPage)
   return (
     <nav className='navbarColor'>
-      <div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
+      <div className='max-w-7xl mx-auto px-2 sm:px-4 lg:px-6'>
         <div className='relative flex items-center justify-between h-16'>
-          <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
+          <div className='inset-y-0 left-0 flex items-center sm:hidden'>
             {/* <!-- Mobile menu button--> */}
             <button
               onClick={() => {
@@ -66,10 +67,20 @@ export default function Nav(props: NavProps) {
               </svg>
             </button>
           </div>
-          <div className='flex-1 flex items-center justify-center sm:items-stretch sm:justify-start'>
-            <div className='sae-text hidden sm:block px-3 py-3 text-xl'>
+          <div className='flex ml-1 sm:ml-0 justify-center sm:justify-start'>
+            <img src={logo} className='object-scale-down h-12' alt='logo' />
+            <div className='sae-text hidden sm:block px-3 py-3 md:text-sm lg:text-xl'>
               <a href='/'>UC Santa Barbara Gaucho Racing</a>
             </div>
+          </div>
+          
+		  <div className='flex ml-1 sm:ml-0 justify-center sm:justify-start'>
+            <div className='sae-text block sm:hidden px-3 py-3 text-xl'>
+              <a href='/'>{curPage}</a>
+            </div>
+          </div>
+
+          <div className='flex-1 flex items-center justify-center sm:items-stretch sm:justify-start'>
             <div className='flex-shrink-0 flex items-center'></div>
             <div className='hidden sm:block sm:ml-6 py-2'>
               <div className='flex space-x-4'>
@@ -77,10 +88,10 @@ export default function Nav(props: NavProps) {
                 <a
                   href='/'
                   className={
-                    (curPage === 'home'
+                    (curPage === 'Home'
                       ? 'item-selected-bg'
                       : 'hover:bg-gray-900 text-items') +
-                    ' px-3 py-2 rounded-md text-sm font-medium'
+                    ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
                   }
                   aria-current='page'
                 >
@@ -90,10 +101,10 @@ export default function Nav(props: NavProps) {
                 <a
                   href='/about'
                   className={
-                    (curPage === 'about'
+                    (curPage === 'About'
                       ? 'item-selected-bg'
                       : 'hover:bg-gray-900 text-items') +
-                    ' px-3 py-2 rounded-md text-sm font-medium'
+                    ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
                   }
                 >
                   About
@@ -105,7 +116,7 @@ export default function Nav(props: NavProps) {
                     (curPage === 'FSAE'
                       ? 'item-selected-bg'
                       : 'hover:bg-gray-900 text-items') +
-                    ' px-3 py-2 rounded-md text-sm font-medium'
+                    ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
                   }
                 >
                   Formula SAE Electric
@@ -114,10 +125,10 @@ export default function Nav(props: NavProps) {
                 <a
                   href='/sponsors'
                   className={
-                    (curPage === 'sponsors'
+                    (curPage === 'Sponsors'
                       ? 'item-selected-bg'
                       : 'hover:bg-gray-900 text-items') +
-                    ' px-3 py-2 rounded-md text-sm font-medium'
+                    ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
                   }
                 >
                   Sponsors
@@ -125,10 +136,10 @@ export default function Nav(props: NavProps) {
                 <a
                   href='/newsletter'
                   className={
-                    (curPage === 'newsletter'
+                    (curPage === 'Newsletter'
                       ? 'item-selected-bg'
                       : 'hover:bg-gray-900 text-items') +
-                    ' px-3 py-2 rounded-md text-sm font-medium'
+                    ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
                   }
                 >
                   Newsletter
@@ -146,7 +157,7 @@ export default function Nav(props: NavProps) {
           <a
             href='/'
             className={
-              (curPage === 'home'
+              (curPage === 'Home'
                 ? 'bg-gray-900 text-items'
                 : 'text-gray-300') +
               ' block px-3 py-2 rounded-md text-base font-medium'
@@ -159,7 +170,7 @@ export default function Nav(props: NavProps) {
           <a
             href='/about'
             className={
-              (curPage === 'about'
+              (curPage === 'About'
                 ? 'bg-gray-900 text-items'
                 : 'text-gray-300') +
               ' block px-3 py-2 rounded-md text-base font-medium'
@@ -182,7 +193,7 @@ export default function Nav(props: NavProps) {
           <a
             href='/sponsors'
             className={
-              (curPage === 'sponsors'
+              (curPage === 'Sponsors'
                 ? 'bg-gray-900 text-items'
                 : 'text-gray-300') +
               ' block px-3 py-2 rounded-md text-base font-medium'
@@ -193,7 +204,7 @@ export default function Nav(props: NavProps) {
           <a
             href='/newsletter'
             className={
-              (curPage === 'newsletter'
+              (curPage === 'Newsletter'
                 ? 'bg-gray-900 text-items'
                 : 'text-gray-300') +
               ' block px-3 py-2 rounded-md text-base font-medium'

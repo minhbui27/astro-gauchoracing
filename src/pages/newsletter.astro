@@ -1,4 +1,5 @@
 ---
+import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav";
 import Newsletter from "../components/newsletter/Newsletter";
 ---
@@ -13,8 +14,9 @@ import Newsletter from "../components/newsletter/Newsletter";
 </head>
 
 <body>
-	<Nav currentPage={"newsletter"} client:visible/>
+	<Nav currentPage={"Newsletter"} client:visible/>
 	<Newsletter/>
+	<Footer/>
 </body>
 
 </html>
