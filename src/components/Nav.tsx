@@ -1,13 +1,15 @@
 import * as React from 'react'
 import { useState } from 'react'
+import '../style/Nav.scss'
 interface NavProps {
   currentPage: string
 }
-const Nav: React.FC<NavProps> = (props: NavProps) => {
+export default function Nav(props: NavProps) {
   const [menuOpen, setMenuOpen] = useState<boolean | null>(true)
+  const curPage = props.currentPage
   console.log(props.currentPage)
   return (
-    <nav className='bg-gray-800'>
+    <nav className='navbarColor'>
       <div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
         <div className='relative flex items-center justify-between h-16'>
           <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
@@ -18,8 +20,6 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
               }}
               type='button'
               className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
-              aria-controls='mobile-menu'
-              aria-expanded='false'
             >
               <span className='sr-only'>Open main menu</span>
               {/* <!-- */}
@@ -67,17 +67,20 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
             </button>
           </div>
           <div className='flex-1 flex items-center justify-center sm:items-stretch sm:justify-start'>
+            <div className='sae-text hidden sm:block px-3 py-3 text-xl'>
+              <a href='/'>UC Santa Barbara Gaucho Racing</a>
+            </div>
             <div className='flex-shrink-0 flex items-center'></div>
-            <div className='hidden sm:block sm:ml-6'>
+            <div className='hidden sm:block sm:ml-6 py-2'>
               <div className='flex space-x-4'>
                 {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                 <a
                   href='/'
                   className={
-                    (props.currentPage === 'home'
-                      ? 'bg-gray-900'
-                      : 'hover:bg-gray-700') +
-                    ' text-white px-3 py-2 rounded-md text-sm font-medium'
+                    (curPage === 'home'
+                      ? 'item-selected-bg'
+                      : 'hover:bg-gray-900 text-items') +
+                    ' px-3 py-2 rounded-md text-sm font-medium'
                   }
                   aria-current='page'
                 >
@@ -85,8 +88,13 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                 </a>
 
                 <a
-                  href='#'
-                  className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                  href='/about'
+                  className={
+                    (curPage === 'about'
+                      ? 'item-selected-bg'
+                      : 'hover:bg-gray-900 text-items') +
+                    ' px-3 py-2 rounded-md text-sm font-medium'
+                  }
                 >
                   About
                 </a>
@@ -94,24 +102,34 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                 <a
                   href='/fsae'
                   className={
-                    (props.currentPage === 'FSAE'
-                      ? 'bg-gray-900'
-                      : 'hover:bg-gray-700') +
-                    ' text-white px-3 py-2 rounded-md text-sm font-medium'
+                    (curPage === 'FSAE'
+                      ? 'item-selected-bg'
+                      : 'hover:bg-gray-900 text-items') +
+                    ' px-3 py-2 rounded-md text-sm font-medium'
                   }
                 >
                   Formula SAE Electric
                 </a>
 
                 <a
-                  href='#'
-                  className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                  href='/sponsors'
+                  className={
+                    (curPage === 'sponsors'
+                      ? 'item-selected-bg'
+                      : 'hover:bg-gray-900 text-items') +
+                    ' px-3 py-2 rounded-md text-sm font-medium'
+                  }
                 >
                   Sponsors
                 </a>
                 <a
-                  href='#'
-                  className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                  href='/newsletter'
+                  className={
+                    (curPage === 'newsletter'
+                      ? 'item-selected-bg'
+                      : 'hover:bg-gray-900 text-items') +
+                    ' px-3 py-2 rounded-md text-sm font-medium'
+                  }
                 >
                   Newsletter
                 </a>
@@ -127,34 +145,59 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
           {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
           <a
             href='/'
-            className='bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium'
+            className={
+              (curPage === 'home'
+                ? 'bg-gray-900 text-items'
+                : 'text-gray-300') +
+              ' block px-3 py-2 rounded-md text-base font-medium'
+            }
             aria-current='page'
           >
             Home
           </a>
 
           <a
-            href='#'
-            className='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+            href='/about'
+            className={
+              (curPage === 'about'
+                ? 'bg-gray-900 text-items'
+                : 'text-gray-300') +
+              ' block px-3 py-2 rounded-md text-base font-medium'
+            }
           >
             About
           </a>
 
           <a
             href='/fsae'
-            className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+            className={
+              (curPage === 'FSAE'
+                ? 'bg-gray-900 text-items'
+                : 'text-gray-300') +
+              ' block px-3 py-2 rounded-md text-base font-medium'
+            }
           >
             Formula SAE Electric
           </a>
           <a
-            href='#'
-            className='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+            href='/sponsors'
+            className={
+              (curPage === 'sponsors'
+                ? 'bg-gray-900 text-items'
+                : 'text-gray-300') +
+              ' block px-3 py-2 rounded-md text-base font-medium'
+            }
           >
             Sponsors
           </a>
           <a
-            href='#'
-            className='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+            href='/newsletter'
+            className={
+              (curPage === 'newsletter'
+                ? 'bg-gray-900 text-items'
+                : 'text-gray-300') +
+              ' block px-3 py-2 rounded-md text-base font-medium'
+            }
           >
             Newsletter
           </a>
@@ -163,5 +206,3 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
     </nav>
   )
 }
-
-export default Nav

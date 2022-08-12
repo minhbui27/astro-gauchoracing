@@ -1,6 +1,6 @@
 ---
-import FSAE from "../components/fsae/FSAE";
 import Nav from "../components/Nav";
+import About from "../components/about/About"
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -9,12 +9,13 @@ import Nav from "../components/Nav";
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width" />
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	<title>Formula SAE Electric -- UCSB</title>
+	<title>About</title>
 </head>
 
 <body>
-	<Nav currentPage={"FSAE"} client:visible/>
-	<FSAE/>
+	<Nav currentPage={"about"} client:visible/>
+	<About/>
 </body>
 
 </html>
+
