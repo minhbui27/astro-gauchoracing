@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav';
+import Home from '../components/home/Home'
 ---
 
 <!DOCTYPE html>
@@ -15,6 +16,7 @@ import Nav from '../components/Nav';
 
 <body>
 	<Nav currentPage={"Home"} client:visible/>
+	<Home client:load/>
 	<Footer/>
 </body>
 

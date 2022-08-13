@@ -1,0 +1,23 @@
+$navy: #003660;
+@font-face {
+  font-family: 'Poppins-Medium';
+  src: url(/Poppins-Medium.ttf) format('truetype');
+}
+.bg-footer {
+  background-color: $navy;
+}
+.content-1 {
+  font-family: "Poppins-Medium";
+  color: white;
+  text-align: left;
+}
+.content-2 {
+  font-family: "Poppins-Medium";
+  color: white;
+  text-align: left;
+  font-size: 15px;
+}
+.content-2 h1 {
+  color: #F4D35E;
+  font-size: 20px;
+}

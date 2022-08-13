@@ -1,3 +1,8 @@
+---
+import '../styles/Footer.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInstagram, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+---
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +14,45 @@
 </head>
 
 <body>
-	<div class="w-screen h-64 bg-gray-800">
-	Test
+	<div class="w-screen h-64 bg-footer">
+		<div class="flex h-full flex-col sm:flex-row">
+			<div class="content-1 flex flex-col flex-1 space-y-1 justify-center">
+				<div class="flex flex-row">
+					<div class="flex-1"></div>
+					<div class="basis-auto text-base sm:text-2xl">
+						<p>UCSB Gaucho Racing</p>
+						<p>CoE Machine shop</p>
+						<p>Arts Building 524, Room 0249</p>
+						<p>Santa Barbara, CA 93106</p>
+					</div>
+					<div class="flex-1"></div>
+				</div>
+			</div>
+			<div class="content-2 flex flex-col flex-1 space-y-1 justify-center">
+				<div class="flex flex-row">
+					<div class="flex-1"></div>
+					<div class="basis-auto text-sm sm:text-lg">
+						<h1 class="text-white">Contact us at:</h1>
+						<p>ucsantabarbarasae@gmail.com</p>
+						<p>(626)614 7420</p>
+						<div class="space-x-1 mt-2">
+							<a href="https://www.instagram.com/sae.ucsb/">
+								<FontAwesomeIcon client:load icon={faInstagram} size='lg' />
+							</a>
+							<a href="https://www.instagram.com/sae.ucsb/">
+								<FontAwesomeIcon client:load icon={faTwitter} size='lg' />
+							</a>
+							<a href="https://www.instagram.com/sae.ucsb/">
+								<FontAwesomeIcon client:load icon={faLinkedin} size='lg' />
+							</a>
+						</div>
+					</div>
+					<div class="flex-1"> </div>
+				</div>
+			</div>
+			<div />
+		</div>
 	</div>
 </body>
 
 </html>
-

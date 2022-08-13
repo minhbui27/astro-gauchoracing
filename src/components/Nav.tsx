@@ -1,156 +1,176 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import '../styles/Nav.scss'
 import logo from '/logo-gold.png'
+const ContextContainer = React.createContext(null)
 interface NavProps {
   currentPage: string
 }
-export default function Nav(props: NavProps) {
-  const [menuOpen, setMenuOpen] = useState<boolean | null>(true)
-  const curPage = props.currentPage
-  console.log(props.currentPage)
+const MobileMenuButton = (): JSX.Element => {
+  const { menuOpen, setMenuOpen } = useContext(ContextContainer)
   return (
-    <nav className='navbarColor'>
-      <div className='max-w-7xl mx-auto px-2 sm:px-4 lg:px-6'>
-        <div className='relative flex items-center justify-between h-16'>
-          <div className='inset-y-0 left-0 flex items-center sm:hidden'>
-            {/* <!-- Mobile menu button--> */}
-            <button
-              onClick={() => {
-                setMenuOpen(!menuOpen)
-              }}
-              type='button'
-              className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
-            >
-              <span className='sr-only'>Open main menu</span>
-              {/* <!-- */}
-              {/*   Icon when menu is closed. */}
-              {/**/}
-              {/*   Heroicon name: outline/menu */}
-              {/**/}
-              {/*   Menu open: "hidden", Menu closed: "block" */}
-              {/* --> */}
-              <svg
-                className={(menuOpen ? 'block' : 'hidden') + ' h-6 w-6'}
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                strokeWidth='2'
-                stroke='currentColor'
-                aria-hidden='true'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  d='M4 6h16M4 12h16M4 18h16'
-                />
-              </svg>
-              {/* <!-- */}
-              {/*   Icon when menu is open. */}
-              {/**/}
-              {/*   Heroicon name: outline/x */}
-              {/**/}
-              <svg
-                className={(menuOpen ? 'hidden' : 'block') + ' h-6 w-6'}
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                strokeWidth='2'
-                stroke='currentColor'
-                aria-hidden='true'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  d='M6 18L18 6M6 6l12 12'
-                />
-              </svg>
-            </button>
-          </div>
-          <div className='flex ml-1 sm:ml-0 justify-center sm:justify-start'>
-            <img src={logo} className='object-scale-down h-12' alt='logo' />
-            <div className='sae-text hidden sm:block px-3 py-3 md:text-sm lg:text-xl'>
-              <a href='/'>UC Santa Barbara Gaucho Racing</a>
-            </div>
-          </div>
-          
-		  <div className='flex ml-1 sm:ml-0 justify-center sm:justify-start'>
-            <div className='sae-text block sm:hidden px-3 py-3 text-xl'>
-              <a href='/'>{curPage}</a>
-            </div>
-          </div>
+    <div className='inset-y-0 left-0 flex items-center sm:hidden'>
+      {/* <!-- Mobile menu button--> */}
+      <button
+        onClick={() => {
+          setMenuOpen(!menuOpen)
+        }}
+        type='button'
+        className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
+      >
+        <span className='sr-only'>Open main menu</span>
+        {/* <!-- */}
+        {/*   Icon when menu is closed. */}
+        {/**/}
+        {/*   Heroicon name: outline/menu */}
+        {/**/}
+        {/*   Menu open: "hidden", Menu closed: "block" */}
+        {/* --> */}
+        <svg
+          className={(menuOpen ? 'block' : 'hidden') + ' h-6 w-6'}
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 0 24 24'
+          strokeWidth='2'
+          stroke='currentColor'
+          aria-hidden='true'
+        >
+          <path
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            d='M4 6h16M4 12h16M4 18h16'
+          />
+        </svg>
+        {/* <!-- */}
+        {/*   Icon when menu is open. */}
+        {/**/}
+        {/*   Heroicon name: outline/x */}
+        {/**/}
+        <svg
+          className={(menuOpen ? 'hidden' : 'block') + ' h-6 w-6'}
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 0 24 24'
+          strokeWidth='2'
+          stroke='currentColor'
+          aria-hidden='true'
+        >
+          <path
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            d='M6 18L18 6M6 6l12 12'
+          />
+        </svg>
+      </button>
+    </div>
+  )
+}
 
-          <div className='flex-1 flex items-center justify-center sm:items-stretch sm:justify-start'>
-            <div className='flex-shrink-0 flex items-center'></div>
-            <div className='hidden sm:block sm:ml-6 py-2'>
-              <div className='flex space-x-4'>
-                {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-                <a
-                  href='/'
-                  className={
-                    (curPage === 'Home'
-                      ? 'item-selected-bg'
-                      : 'hover:bg-gray-900 text-items') +
-                    ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
-                  }
-                  aria-current='page'
-                >
-                  Home
-                </a>
-
-                <a
-                  href='/about'
-                  className={
-                    (curPage === 'About'
-                      ? 'item-selected-bg'
-                      : 'hover:bg-gray-900 text-items') +
-                    ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
-                  }
-                >
-                  About
-                </a>
-
-                <a
-                  href='/fsae'
-                  className={
-                    (curPage === 'FSAE'
-                      ? 'item-selected-bg'
-                      : 'hover:bg-gray-900 text-items') +
-                    ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
-                  }
-                >
-                  Formula SAE Electric
-                </a>
-
-                <a
-                  href='/sponsors'
-                  className={
-                    (curPage === 'Sponsors'
-                      ? 'item-selected-bg'
-                      : 'hover:bg-gray-900 text-items') +
-                    ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
-                  }
-                >
-                  Sponsors
-                </a>
-                <a
-                  href='/newsletter'
-                  className={
-                    (curPage === 'Newsletter'
-                      ? 'item-selected-bg'
-                      : 'hover:bg-gray-900 text-items') +
-                    ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
-                  }
-                >
-                  Newsletter
-                </a>
-              </div>
-            </div>
-          </div>
+const DesktopMenu = (): JSX.Element => {
+  const {curPage} = useContext(ContextContainer)
+  return (
+    <>
+      <div className='flex ml-1 sm:ml-0 justify-center sm:justify-start'>
+        <img src={logo} className='object-scale-down h-12' alt='logo' />
+        <div className='sae-text hidden lg:block px-3 py-3 md:text-sm lg:text-xl'>
+          <a href='/'>UC Santa Barbara Gaucho Racing</a>
+        </div>
+        <div className='sae-text hidden md:block px-3 py-3 md:text-sm lg:text-xl'>
         </div>
       </div>
 
-      {/* <!-- Mobile menu, show/hide based on menu state. --> */}
+      <div className='flex ml-1 sm:ml-0 justify-center sm:justify-start'>
+        <div className='sae-text block sm:hidden px-3 py-3 text-xl'>
+          <p>{curPage}</p>
+        </div>
+      </div>
+
+      <div className='flex-1 flex items-center justify-center sm:items-stretch sm:justify-start'>
+        <div className='flex-shrink-0 flex items-center'></div>
+        <div className='hidden sm:block sm:ml-6 py-2'>
+          <div className='flex space-x-4'>
+            {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
+            <a
+              href='/'
+              className={
+                (curPage === 'Home'
+                  ? 'item-selected-bg'
+                  : 'hover:bg-gray-900 text-items') +
+                ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
+              }
+              aria-current='page'
+            >
+              Home
+            </a>
+
+            <a
+              href='/about'
+              className={
+                (curPage === 'About'
+                  ? 'item-selected-bg'
+                  : 'hover:bg-gray-900 text-items') +
+                ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
+              }
+            >
+              About
+            </a>
+
+            <a
+              href='/fsae'
+              className={
+                (curPage === 'FSAE'
+                  ? 'item-selected-bg'
+                  : 'hover:bg-gray-900 text-items') +
+                ' hidden md:block px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
+              }
+            >
+              Formula SAE Electric
+            </a>
+
+            <a
+              href='/fsae'
+              className={
+                (curPage === 'FSAE'
+                  ? 'item-selected-bg'
+                  : 'hover:bg-gray-900 text-items') +
+                ' hidden sm:block md:hidden px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
+              }
+            >
+				FSAE
+            </a>
+
+            <a
+              href='/sponsors'
+              className={
+                (curPage === 'Sponsors'
+                  ? 'item-selected-bg'
+                  : 'hover:bg-gray-900 text-items') +
+                ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
+              }
+            >
+              Sponsors
+            </a>
+            <a
+              href='/newsletter'
+              className={
+                (curPage === 'Newsletter'
+                  ? 'item-selected-bg'
+                  : 'hover:bg-gray-900 text-items') +
+                ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
+              }
+            >
+              Newsletter
+            </a>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+const MobileMenu = (): JSX.Element => {
+  const { curPage, menuOpen } = useContext(ContextContainer)
+  return (
+    <>
       <div className={!menuOpen ? 'block sm:hidden' : 'hidden'}>
         <div className='px-2 pt-2 pb-3 space-y-1'>
           {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
@@ -214,6 +234,25 @@ export default function Nav(props: NavProps) {
           </a>
         </div>
       </div>
+    </>
+  )
+}
+export default function Nav(props: NavProps):JSX.Element {
+  const [menuOpen, setMenuOpen] = useState<boolean | null>(true)
+  const curPage = props.currentPage
+  console.log(props.currentPage)
+  return (
+    <nav className='navbarColor'>
+      <ContextContainer.Provider value={{ curPage, menuOpen, setMenuOpen }}>
+        <div className='max-w-7xl mx-auto px-2 sm:px-4 lg:px-6'>
+          <div className='relative flex items-center justify-between h-16'>
+            <MobileMenuButton />
+            <DesktopMenu />
+          </div>
+        </div>
+        {/* <!-- Mobile menu, show/hide based on menu state. --> */}
+		<MobileMenu/>
+      </ContextContainer.Provider>
     </nav>
   )
 }
