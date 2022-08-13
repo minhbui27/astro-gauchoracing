@@ -1,8 +1,6 @@
 ---
 import '../styles/Footer.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import pkg from '@fortawesome/free-brands-svg-icons'
-const { faInstagram, faTwitter, faLinkedin } = pkg
+import {FooterIcons} from '../components/Icons'
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -36,17 +34,7 @@ const { faInstagram, faTwitter, faLinkedin } = pkg
 						<h1 class="text-white">Contact us at:</h1>
 						<p>ucsantabarbarasae@gmail.com</p>
 						<p>(626)614 7420</p>
-						<div class="space-x-1 mt-2">
-							<a href="https://www.instagram.com/sae.ucsb/">
-								<FontAwesomeIcon client:load icon={faInstagram} size='lg' />
-							</a>
-							<a href="https://www.instagram.com/sae.ucsb/">
-								<FontAwesomeIcon client:load icon={faTwitter} size='lg' />
-							</a>
-							<a href="https://www.instagram.com/sae.ucsb/">
-								<FontAwesomeIcon client:load icon={faLinkedin} size='lg' />
-							</a>
-						</div>
+						<FooterIcons client:load/>
 					</div>
 					<div class="flex-1"> </div>
 				</div>
