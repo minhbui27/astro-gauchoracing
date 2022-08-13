@@ -3,7 +3,7 @@ import '../../styles/Home.scss'
 export default function Home():JSX.Element {
 	return(
 		<>
-			<div className='w-screen h-screen bg-home'>
+			<div className='w-full h-screen bg-home'>
 			</div>
 		</>
 	)
