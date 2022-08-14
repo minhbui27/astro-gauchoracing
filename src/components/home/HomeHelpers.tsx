@@ -1,11 +1,13 @@
 import * as React from 'react'
-import img1 from '/home_images/img1.jpg'
-import img2 from '/home_images/img2.jpg'
 interface ImagesProps {
   images?: string[]
 }
 export default function ScrollingImages(props: ImagesProps): JSX.Element {
-  props.images.forEach((e) => {
-	return <p> e </p>
-  })
+  return (
+    <div className="h-1/3 flex flex-row">
+      {props.images.map((e: string): JSX.Element => {
+        return <img src={`/home_images/${e}.jpg`} alt={`${e}`} />
+      })}
+    </div>
+  )
 }
