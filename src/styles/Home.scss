@@ -1,4 +1,43 @@
+$lightgray: #dce1e5;
 $lightgraydarken: #111517;
 .bg-home {
-	background-color: $lightgraydarken;
+  background-color: $lightgray;
+}
+.bg-whoweare {
+  height: 80vh;
+  background-color: $lightgraydarken;
+}
+.big-text {
+	font-size: 40px;
+	color: white;
+	font-family: 'Poppins', sans-serif;
+}
+.line-coral {
+	height: 50%;
+	background: #EF5645;
+}
+.bg-asphalt {
+	background-color: #807E78;
+}
+// .line-mossweb {
+// 	height: 50%;
+// 	background: #6D7D33;
+// }
+// .line-aquaweb {
+// 	height: 50%;
+// 	background: #047C91;
+// }
+.line-white {
+	height: 8%;
+	background: white;
+}
+.line-gold {
+	background: #FEBC11;
+}
+.line-navy {
+	background: #003660;
+}
+.info-text {
+	font-family: 'Open Sans',sans-serif;
+	color: white;
 }

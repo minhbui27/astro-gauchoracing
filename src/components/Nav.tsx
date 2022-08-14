@@ -4,7 +4,7 @@ import '../styles/Nav.scss'
 import logo from '/logo-gold.png'
 const ContextContainer = React.createContext(null)
 interface NavProps {
-  currentPage: string
+  currentPage?: string
 }
 const MobileMenuButton = (): JSX.Element => {
   const { menuOpen, setMenuOpen } = useContext(ContextContainer)
@@ -244,7 +244,7 @@ export default function Nav(props: NavProps):JSX.Element {
   return (
     <nav className='navbarColor'>
       <ContextContainer.Provider value={{ curPage, menuOpen, setMenuOpen }}>
-        <div className='max-w-7xl mx-auto px-2 sm:px-4 lg:px-6'>
+        <div className='max-w-7xl px-2 sm:px-4 lg:px-6'>
           <div className='relative flex items-center justify-between h-16'>
             <MobileMenuButton />
             <DesktopMenu />
