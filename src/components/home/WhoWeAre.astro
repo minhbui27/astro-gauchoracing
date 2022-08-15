@@ -4,14 +4,13 @@ import ScrollingImages from './HomeHelpers'
 ---
 <!DOCTYPE html>
 <html lang="en">
-
 <body>
 	<div class="flex bg-whoweare">
-		<div class="hidden md:block flex-1 shrink">
-			<ScrollingImages client:load images={["img1","img2"]}/>
+		<div class="hidden md:block md:w-1/4 flex-1 shrink">
+			<ScrollingImages client:load images={["img1","img2","img1","img2"]}/>
 		</div>
 		<div
-			class="flex flex-col shrink-0 w-full border-solid border-white border-2 md:w-[35rem] lg:w-[50rem] justify-start">
+			class="z-10 flex flex-col shrink-0 w-full border-solid border-white border-2 md:w-1/2 justify-start">
 			<div class="flex flex-col h-[2.6rem] justify-start">
 				<div class="line-navy h-2/5 w-full"></div>
 				<div class="line-gold h-2/5 w-full"></div>
@@ -59,13 +58,15 @@ import ScrollingImages from './HomeHelpers'
 				<div class="line-gold h-2/5 w-full"></div>
 				<div class="line-navy h-2/5 w-full"></div>
 			</div>
-			<div class="flex flex-col flex-1 justify-center">
-				<p class="mx-auto info-text w-3/5 text-center text-xl sm:text-3xl">
+			<div class="flex flex-col bg-textbox flex-1 justify-center">
+				<p class="mx-auto info-text w-3/5 text-center text-xl sm:text-2xl lg:text-3xl">
 				Gaucho Racing is a SAE Collegiate Design Series organization managed by UC Santa Barbara’s SAE Collegiate Chapter.  Our mission is to research, build and test a Formula SAE Electric vehicle, and to enter it in an SAE International competition in 2022.
 				</p>
 			</div>
 		</div>
-		<div class="hidden md:block flex-1">test3</div>
+		<div class="hidden md:block md:w-1/4 flex-1 shrink">
+			<ScrollingImages client:load images={["img1","img2","img1","img2"]}/>
+		</div>
 	</div>
 </body>
 
