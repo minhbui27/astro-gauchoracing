@@ -19,7 +19,7 @@ import Home from '../components/home/Home'
 		<div class="fixed z-50 w-screen">
 			<Nav currentPage={"Home"} client:visible />
 		</div>
-		<Home client:load />
+			<Home client:only='react' />
 		<WhoWeAre />
 		<Footer />
 	</div>
@@ -30,6 +30,7 @@ import Home from '../components/home/Home'
 	@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
 	body {
 		background-color: rgb(17, 24, 39);
 	}
