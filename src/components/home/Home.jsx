@@ -36,7 +36,7 @@ export function Car(props) {
           (-0.175 * scale) / 0.001,
           (-0.775 * scale) / 0.001,
         ]
-      : [-1.275, 2, -0.5]
+      : [-1.665, 3, -0.5]
   return (
     <group position={[0,-1,0]}>
       <pointLight position={[3, 5, 3]} color={'#003660'} intensity={10} />
@@ -76,7 +76,7 @@ const Scene = () => {
             <div className='z-0 flex-1 flex-col justify-center w-full h-1/5'>
               <div className='flex-1 h-16 w-full'></div>
               <div className='flex-1 hidden sm:block h-8 w-full'></div>
-              <div className='select-none home-toptext text-7xl flex flex-1 flex-row justify-center'>
+              <div className='select-none home-toptext text-6xl md:text-7xl flex flex-1 flex-row justify-center'>
                 Welcome to UCSB Gaucho Racing
               </div>
             </div>
@@ -101,7 +101,7 @@ const Scene = () => {
               <mesh
                 receiveShadow
                 rotation={[-Math.PI / 2, 0, 0]}
-                position={[0, -2, -4]}
+                position={responsiveWidth == "sm" ? [0,-4,-4] : [0, -2, -4]}
               >
                 <planeBufferGeometry attach='geometry' args={[100, 100]} />
                 <shadowMaterial attach='material' opacity={0.3} />
