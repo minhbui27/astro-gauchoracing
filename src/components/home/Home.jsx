@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Suspense, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, Html } from '@react-three/drei'
+import { OrbitControls, Html, Preload } from '@react-three/drei'
 import * as THREE from 'three'
 import '../../styles/Home.scss'
 import { ModelCar } from './Model_car'
@@ -19,32 +19,30 @@ export function Car(props) {
   // })
   const scale =
     props.responsiveWidth == 'lg'
+      ? 0.0035
+      : props.responsiveWidth == 'md'
       ? 0.0025
-      : props.responsiveWidth == 'md'
-      ? 0.0022
-      : 0.001
-  const position =
-    props.responsiveWidth == 'lg'
-      ? [3, -0.5, 0]
-      : props.responsiveWidth == 'md'
-      ? [2.5, -0.5, 0]
-      : [-1.275, 1.5, 0]
+      : 0.0015
   const rotation =
     props.responsiveWidth == 'lg'
       ? [0, -Math.PI / 2, 0]
       : props.responsiveWidth == 'md'
       ? [0, -Math.PI / 2, 0]
-      : [Math.PI / 2, 0, 0]
+      : [Math.PI/2, 0, 0]
+  const position =
+    props.responsiveWidth == 'lg' || props.responsiveWidth == 'md'
+      ? [
+          (1.25 * scale) / 0.001,
+          (-0.175 * scale) / 0.001,
+          (-0.775 * scale) / 0.001,
+        ]
+      : [-1.275, 2, -0.5]
   return (
-    <group>
-      {/* <mesh position={[0,0,0]}> */}
-      {/*   <boxBufferGeometry attach='geometry' /> */}
-      {/*   <meshBasicMaterial color='hotpink' attach='material' /> */}
-      {/* </mesh> */}
+    <group position={[0,-1,0]}>
       <pointLight position={[3, 5, 3]} color={'#003660'} intensity={10} />
       <pointLight position={[-3, 5, 3]} color={'#FEBC11'} intensity={2} />
-      <group ref={carRef}>
-        <ModelCar position={position} scale={scale} rotation={rotation} />
+      <group position={position} ref={carRef}>
+        <ModelCar scale={scale} rotation={rotation} />
       </group>
       {/* <OrbitControls/> */}
     </group>
@@ -60,7 +58,7 @@ const Scene = () => {
     <Canvas
       shadows
       orthographic
-      camera={{ zoom: 100, position: [0, 0, 10], near: 0.1, far: 1000 }}
+      camera={{ zoom: 100, position: [0, 2, 10], near: 0.1, far: 1000 }}
     >
       <Suspense
         fallback={
@@ -74,7 +72,20 @@ const Scene = () => {
           justifyContent='center'
           alignItems='center'
         >
-          <group position={[0, 0.5, 0]} rotation={[Math.PI / 16, 0, 0]}>
+          <Html zIndexRange={[10, 0]} fullscreen className='absolute z-0'>
+            <div className='z-0 flex-1 flex-col justify-center w-full h-1/5'>
+              <div className='flex-1 h-16 w-full'></div>
+              <div className='flex-1 hidden sm:block h-8 w-full'></div>
+              <div className='select-none home-toptext text-7xl flex flex-1 flex-row justify-center'>
+                Welcome to UCSB Gaucho Racing
+              </div>
+            </div>
+          </Html>
+          <group position={[0, 0.5, 0]} rotation={[0, 0, 0]}>
+            <mesh position={[0, 0, 0]}>
+              <boxBufferGeometry args={[0.1, 0.1, 0.1]} attach='geometry' />
+              <meshBasicMaterial color='hotpink' attach='material' />
+            </mesh>
             <fog attach='fog' args={['white', 0, 40]} />
             <ambientLight intensity={0.1} />
             <directionalLight
@@ -98,7 +109,8 @@ const Scene = () => {
             </group>
           </group>
         </Flex>
-        {/* <OrbitControls/> */}
+        <Preload all />
+        <OrbitControls enablePan={false} enableZoom={false} />
       </Suspense>
     </Canvas>
   )
@@ -106,23 +118,16 @@ const Scene = () => {
 export default function Home() {
   return (
     <div className='bg-home w-full h-screen'>
-      <div className='flex flex-row w-full h-1/5'>
-        <div className='flex-1 justify-center'>
-          <div className='flex-none h-16'></div>
-          <div className='flex flex-col flex-1 mx-auto info-text w-3/5 h-full content-center text-center text-2xl lg:text-3xl'>
-            Gaucho Racing is a SAE Collegiate Design Series organization managed
-            by UC Santa Barbara’s SAE Collegiate Chapter. Our mission is to
-            research, build and test a Formula SAE Electric vehicle, and to
-            enter it in an SAE International competition in 2022.
-          </div>
-        </div>
-        <div className='flex-1'>test</div>
-        <div className='flex-1'>test</div>
-      </div>
-      <div className='bg-home w-full h-3/5'>
+      {/*     <div className='flex-1 flex-col justify-center w-full h-1/5'> */}
+      {/* <div className='flex-1 h-16 w-full'></div> */}
+      {/* <div className='flex-1 hidden sm:block h-8 w-full'></div> */}
+      {/* <div className='big-text flex flex-1 flex-row justify-center'> */}
+      {/* Welcome to UCSB Gaucho Racing */}
+      {/* </div> */}
+      {/*     </div> */}
+      <div className='bg-home w-full h-full'>
         <Scene />
       </div>
-      <div className='w-full h-1/5'></div>
     </div>
   )
 }

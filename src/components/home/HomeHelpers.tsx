@@ -10,13 +10,13 @@ interface SideLinesProps {
   repeat?: number
 }
 export default function ScrollingImages(props: ImagesProps): JSX.Element {
-  const initial = props.direction ? -700 : 0
-  const animate = props.direction ? 0 : -700
+  const initial = props.direction ? -750 : 10
+  const animate = props.direction ? 10 : -750
   return (
     <motion.div className='h-1/3 overflow-hidden w-full flex'>
       {props.images.map((e: string,i: number): JSX.Element => {
         return (
-          <div key={i} className='flex-none shrink-0 w-[350px] h-full'>
+          <div key={i} className='flex-none shrink-0 w-1/2 lg:w-1/3 h-full'>
             <motion.img
               initial={{ x: initial}}
               animate={{ x: animate}}
