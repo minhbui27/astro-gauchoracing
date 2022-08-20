@@ -31,7 +31,8 @@ import { SideLines } from './HomeHelpers'
 			</div>
 			<div class="flex flex-col bg-textbox flex-1 overflow-y-auto justify-center">
 				<div class="flex-none h-16"></div>
-				<div class="flex flex-col flex-1 mx-auto info-text w-3/5 h-full content-center text-center text-2xl lg:text-3xl">
+				<div
+					class="flex flex-col flex-1 mx-auto info-text w-3/5 h-full content-center text-center text-2xl lg:text-3xl">
 					Gaucho Racing is a SAE Collegiate Design Series organization managed by UC Santa Barbara’s SAE
 					Collegiate Chapter. Our mission is to research, build and test a Formula SAE Electric vehicle, and
 					to enter it in an SAE International competition in 2022.
@@ -39,11 +40,17 @@ import { SideLines } from './HomeHelpers'
 			</div>
 		</div>
 		<div class="hidden md:block md:w-1/2 lg:w-3/5 flex-1 shrink">
-			<ScrollingImages client:load direction={1} duration={8} images={["img1","img2","img1","img2","img1","img2"]} />
-			<ScrollingImages client:load direction={0} duration={8} images={["img1","img2","img1","img2","img1","img2"]} />
-			<ScrollingImages client:load direction={1} duration={8} images={["img1","img2","img1","img2","img1","img2"]} />
+			<ScrollingImages client:load direction={1} duration={8}
+				images={["img1","img2","img1","img2","img1","img2"]} />
+			<ScrollingImages client:load direction={0} duration={8}
+				images={["img1","img2","img1","img2","img1","img2"]} />
+			<ScrollingImages client:load direction={1} duration={8}
+				images={["img1","img2","img1","img2","img1","img2"]} />
 		</div>
 	</div>
 </body>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
+</style>
 
 </html>

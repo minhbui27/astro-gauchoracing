@@ -16,7 +16,7 @@ export default function ScrollingImages(props: ImagesProps): JSX.Element {
     <motion.div className='h-1/3 overflow-hidden w-full flex'>
       {props.images.map((e: string,i: number): JSX.Element => {
         return (
-          <div key={i} className='flex-none shrink-0 w-1/2 lg:w-1/3 h-full'>
+          <div key={i} className='flex-none shrink-0 w-1/3 h-full'>
             <motion.img
               initial={{ x: initial}}
               animate={{ x: animate}}
