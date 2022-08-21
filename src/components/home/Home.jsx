@@ -2,11 +2,12 @@ import * as React from 'react'
 import { Suspense, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Html, Preload } from '@react-three/drei'
+import { ArrowheadDown } from '@styled-icons/evaicons-solid/ArrowheadDown'
 import * as THREE from 'three'
 import '../../styles/Home.scss'
 import { ModelCar } from './Model_car'
 import { Flex, Box } from '@react-three/flex'
-import { HomeIcon } from '../Icons'
+import { motion } from 'framer-motion'
 import { LoadingScreen } from './HomeHelpers'
 export function Car(props) {
   // const camera = new THREE.PerspectiveCamera(40, 1 ,1, 10000)
@@ -52,7 +53,17 @@ function HtmlContent() {
       </div>
       <div className='hidden flex-1 md:flex flex-col justify-end'>
         <div className=' h-32 flex flex-row justify-center'>
-          <HomeIcon />
+          <motion.div
+            animate={{ y: 50 }}
+            transition={{
+              ease: 'linear',
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 2,
+            }}
+          >
+            <ArrowheadDown size="48" />
+          </motion.div>
         </div>
       </div>
     </div>
@@ -158,7 +169,17 @@ export default function Home() {
       </div>
       <div className='flex flex-1 md:hidden flex-col h-1/5 justify-end'>
         <div className='h-32 flex flex-row justify-center'>
-          <HomeIcon />
+          <motion.div
+            animate={{ y: 50 }}
+            transition={{
+              ease: 'linear',
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 2,
+            }}
+          >
+            <ArrowheadDown size="36" />
+          </motion.div>
         </div>
       </div>
     </div>
