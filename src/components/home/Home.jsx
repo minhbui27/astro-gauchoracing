@@ -6,9 +6,8 @@ import * as THREE from 'three'
 import '../../styles/Home.scss'
 import { ModelCar } from './Model_car'
 import { Flex, Box } from '@react-three/flex'
-const Loading = () => {
-  return <div>Loading...</div>
-}
+import { HomeIcon } from '../Icons'
+import { LoadingScreen } from './HomeHelpers'
 export function Car(props) {
   // const camera = new THREE.PerspectiveCamera(40, 1 ,1, 10000)
   // camera.position.set(50,5,40)
@@ -44,22 +43,47 @@ export function Car(props) {
     </group>
   )
 }
+function HtmlContent() {
+  return (
+    <div className='h-full bg-transparent flex flex-col justify-start'>
+      <div className='h-16 w-full'></div>
+      <div className='select-none home-toptext text-6xl md:text-7xl flex flex-1 flex-row justify-center'>
+        <p>Welcome to Gaucho Racing</p>
+      </div>
+      <div className='hidden flex-1 md:flex flex-col justify-end'>
+        <div className=' h-32 flex flex-row justify-center'>
+          <HomeIcon />
+        </div>
+      </div>
+    </div>
+  )
+}
 function Scene() {
+  const height =
+    window.height ||
+    document.documentElement.clientHeight ||
+    document.body.clientHeight
   const width =
     window.innerWidth ||
     document.documentElement.clientWidth ||
     document.body.clientWidth
   const responsiveWidth = width > 1024 ? 'lg' : width > 768 ? 'md' : 'sm'
+  const camera = new THREE.OrthographicCamera(
+    width / -2,
+    width / 2,
+    height / 2,
+    height / 2,
+    0.1,
+    1000
+  )
+  camera.position.set(0, 2, 10)
+  camera.zoom = 100
   return (
-    <Canvas
-      shadows
-      orthographic
-      camera={{ zoom: 100, position: [0, 2, 10], near: 0.1, far: 1000 }}
-    >
+    <Canvas shadows camera={camera}>
       <Suspense
         fallback={
           <Html>
-            <Loading />
+            <LoadingScreen />
           </Html>
         }
       >
@@ -72,19 +96,10 @@ function Scene() {
             args={[0, 0]}
             zIndexRange={[20, 0]}
             fullscreen
-            style={{ width: '100vw', height: '25vh' }}
+            style={{ width: '100vw', height: '100vh' }}
             className='absolute'
           >
-            <div className='flex-1 flex-col justify-center'>
-              <div className='flex-1 h-16 w-full'></div>
-              <div className='flex-1 hidden sm:block h-8 w-full'></div>
-              <div className='select-none home-toptext text-6xl md:text-7xl flex flex-1 flex-row justify-center'>
-                <p>
-                  Welcome to
-                  Gaucho Racing
-                </p>
-              </div>
-            </div>
+            <HtmlContent />
           </Html>
           <group
             position={responsiveWidth == 'sm' ? [0, 0, 0] : [0, 0.5, 0]}
@@ -109,7 +124,7 @@ function Scene() {
               <mesh
                 receiveShadow
                 rotation={[-Math.PI / 2, 0, 0]}
-                position={responsiveWidth == 'sm' ? [0, -4, -4] : [0, -2, -4]}
+                position={responsiveWidth == 'sm' ? [0, -3, -4] : [0, -2.5, -4]}
               >
                 <planeBufferGeometry attach='geometry' args={[100, 100]} />
                 <shadowMaterial attach='material' opacity={0.3} />
@@ -118,7 +133,12 @@ function Scene() {
           </group>
         </Flex>
         <Preload all />
-        <OrbitControls enablePan={false} enableZoom={false} />
+        <OrbitControls
+          maxPolarAngle={1.5}
+          minPolarAngle={1.5}
+          enablePan={false}
+          enableZoom={false}
+        />
       </Suspense>
     </Canvas>
   )
@@ -135,6 +155,11 @@ export default function Home() {
       {/*     </div> */}
       <div className='bg-home w-full h-4/5 md:h-full'>
         <Scene />
+      </div>
+      <div className='flex flex-1 md:hidden flex-col h-1/5 justify-end'>
+        <div className='h-32 flex flex-row justify-center'>
+          <HomeIcon />
+        </div>
       </div>
     </div>
   )

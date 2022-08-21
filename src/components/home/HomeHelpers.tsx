@@ -46,3 +46,11 @@ export function SideLines(props: SideLinesProps): JSX.Element {
     </div>
   )
 }
+
+export function LoadingScreen(): JSX.Element {
+	return(
+		<div>
+			Loading...
+		</div>
+	)
+}
