@@ -1,5 +1,32 @@
 $lightgray: #dce1e5;
 $lightgraydarken: #111517;
+@media (min-width: 0px) {
+  .ucsb-link {
+    font-size: 4.5rem;
+    font-family: 'Roboto Slab', serif;
+    color: #febc11;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #003660;
+  }
+}
+@media (min-width: 768px) {
+  .ucsb-link {
+    font-size: 7rem;
+    font-family: 'Roboto Slab', serif;
+    color: #febc11;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: #003660;
+  }
+}
+@media (min-width: 1024px) {
+  .ucsb-link {
+    font-size: 10rem;
+    font-family: 'Roboto Slab', serif;
+    color: #febc11;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: #003660;
+  }
+}
 .bg-home {
   background-color: $lightgray;
 }
@@ -8,41 +35,34 @@ $lightgraydarken: #111517;
   background-color: $lightgraydarken;
 }
 .big-text {
-	font-size: 40px;
-	color: white;
-	font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
 }
 .line-coral {
-	height: 50%;
-	background: #EF5645;
+  height: 50%;
+  background: #ef5645;
 }
 .bg-asphalt {
-	background-color: #807E78;
+  background-color: #807e78;
 }
 .bg-textbox {
-	background-color: $lightgraydarken;
+  background-color: $lightgraydarken;
 }
 .line-white {
-	height: 8%;
-	background: white;
+  height: 8%;
+  background: white;
 }
 .line-gold {
-	background: #FEBC11;
+  background: #febc11;
 }
 .line-navy {
-	background: #003660;
+  background: #003660;
 }
 .info-text {
-	font-family: 'Open Sans',sans-serif;
-	color: white;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
 }
 .home-toptext {
-	font-family: 'Poppins', sans-serif;
-}
-.ucsb-link {
-	font-size: 8rem;
-	font-family: 'Roboto Slab', serif;
-	color: #FEBC11;
-	-webkit-text-stroke-width: 5px;
-	-webkit-text-stroke-color: #003660;
+  font-family: 'Poppins', sans-serif;
 }

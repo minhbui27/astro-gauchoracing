@@ -34,39 +34,51 @@ export function Car(props) {
         ]
       : [-1.665, 3, -0.5]
   return (
-    <group position={[0, -1, 0]}>
+    <group>
       <pointLight position={[3, 5, 3]} color={'#003660'} intensity={10} />
       <pointLight position={[-3, 5, 3]} color={'#FEBC11'} intensity={2} />
-      <group position={position}>
-        <ModelCar scale={scale} rotation={rotation} />
+      <group position={[0, -1, 0]}>
+        <group position={position}>
+          <ModelCar scale={scale} rotation={rotation} />
+        </group>
+        {/* <OrbitControls/> */}
       </group>
-      {/* <OrbitControls/> */}
     </group>
   )
 }
 function HtmlContent() {
   return (
-    <div className='h-full bg-transparent flex flex-col justify-start'>
-      <div className='h-16 w-full'></div>
-      <div className='select-none home-toptext text-6xl md:text-7xl flex flex-1 flex-row justify-center'>
-        <p>Welcome to Gaucho Racing</p>
-      </div>
-      <div className='hidden flex-1 md:flex flex-col justify-end'>
-        <div className=' h-32 flex flex-row justify-center'>
-          <motion.div
-            animate={{ y: 50 }}
-            transition={{
-              ease: 'linear',
-              repeat: Infinity,
-              repeatType: 'loop',
-              duration: 2,
-            }}
-          >
-            <ArrowheadDown size="48" />
-          </motion.div>
+    <Html
+      args={[0, 0]}
+      zIndexRange={[20, 0]}
+      fullscreen
+      style={{ width: '100vw', height: '100vh' }}
+      className='absolute'
+    >
+      <div className='h-full bg-transparent flex flex-col justify-start'>
+        <div className='h-20 md:h-28 w-full'></div>
+        <div className='text-6xl md:text-7xl lg:text-8xl select-none home-toptext flex flex-col md:flex-row justify-center'>
+          <div className='flex-1 flex flex-col text-center justify-center'>WELCOME TO</div>
+          <div className='flex-1 flex flex-col text-center justify-center'><a className='ucsb-link'> UCSB </a></div>
+          <div className='flex-1 flex flex-col text-center justify-center'>GAUCHO RACING</div>
+        </div>
+        <div className='hidden flex-1 md:flex flex-col justify-end'>
+          <div className=' h-32 flex flex-row justify-center'>
+            <motion.div
+              animate={{ y: 50 }}
+              transition={{
+                ease: 'linear',
+                repeat: Infinity,
+                repeatType: 'loop',
+                duration: 2,
+              }}
+            >
+              <ArrowheadDown size='48' />
+            </motion.div>
+          </div>
         </div>
       </div>
-    </div>
+    </Html>
   )
 }
 function Scene() {
@@ -103,17 +115,9 @@ function Scene() {
           justifyContent='center'
           alignItems='center'
         >
-          <Html
-            args={[0, 0]}
-            zIndexRange={[20, 0]}
-            fullscreen
-            style={{ width: '100vw', height: '100vh' }}
-            className='absolute'
-          >
-            <HtmlContent />
-          </Html>
+          <HtmlContent />
           <group
-            position={responsiveWidth == 'sm' ? [0, 0, 0] : [0, 0.5, 0]}
+            position={responsiveWidth == 'sm' ? [0, -0.5, 0] : [0, 0, 0]}
             rotation={[0, 0, 0]}
           >
             {/* <mesh position={[0, 0, 0]}> */}
@@ -178,7 +182,7 @@ export default function Home() {
               duration: 2,
             }}
           >
-            <ArrowheadDown size="36" />
+            <ArrowheadDown size='36' />
           </motion.div>
         </div>
       </div>
