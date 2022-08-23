@@ -3,6 +3,7 @@ import { Suspense, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Html, Preload } from '@react-three/drei'
 import { ArrowheadDown } from '@styled-icons/evaicons-solid/ArrowheadDown'
+import { CubeRotate } from '@styled-icons/fluentui-system-filled/CubeRotate'
 import * as THREE from 'three'
 import '../../styles/Home.scss'
 import { ModelCar } from './Model_car'
@@ -56,14 +57,26 @@ function HtmlContent() {
       className='absolute'
     >
       <div className='h-full bg-transparent flex flex-col justify-start'>
-        <div className='h-20 md:h-28 w-full'></div>
-        <div className='text-6xl md:text-7xl lg:text-8xl select-none home-toptext flex flex-col md:flex-row justify-center'>
-          <div className='flex-1 flex flex-col text-center justify-center'>WELCOME TO</div>
-          <div className='flex-1 flex flex-col text-center justify-center'><a className='ucsb-link'> UCSB </a></div>
-          <div className='flex-1 flex flex-col text-center justify-center'>GAUCHO RACING</div>
+        <div className='h-20 md:h-24 w-full'></div>
+        <div className='md:space-x-4 text-6xl lg:text-7xl select-none home-toptext flex flex-col md:flex-wrap md:flex-row justify-center'>
+          <div className='basis-auto flex flex-col text-start justify-center'>
+            WELCOME TO
+          </div>
+          <div className='basis-auto flex flex-col text-start justify-center'>
+            <a className='ucsb-link'> UCSB </a>
+          </div>
+          <div className='basis-auto flex flex-col text-start justify-center'>
+            GAUCHO RACING
+          </div>
         </div>
         <div className='hidden flex-1 md:flex flex-col justify-end'>
-          <div className=' h-32 flex flex-row justify-center'>
+          <div className='flex flex-row space-x-4 justify-center'>
+            <CubeRotate size='48' />
+            <div className='rotate-text flex flex-col text-xl justify-center'>
+              Try rotating the car!
+            </div>
+          </div>
+          <div className='h-32 flex flex-row justify-center'>
             <motion.div
               animate={{ y: 50 }}
               transition={{
@@ -117,9 +130,16 @@ function Scene() {
         >
           <HtmlContent />
           <group
-            position={responsiveWidth == 'sm' ? [0, -0.5, 0] : [0, 0, 0]}
+            position={
+              responsiveWidth == 'sm'
+                ? height > 825
+                  ? [0, 0, 0]
+                  : [0, 0.25, 0]
+                : [0, 0, 0]
+            }
             rotation={[0, 0, 0]}
           >
+            {/* This is a pink box used to debug and calibrate the center of the canvas, because the car model is off center, and upright */}
             {/* <mesh position={[0, 0, 0]}> */}
             {/*   <boxBufferGeometry args={[0.1, 0.1, 0.1]} attach='geometry' /> */}
             {/*   <meshBasicMaterial color='hotpink' attach='material' /> */}
@@ -168,23 +188,28 @@ export default function Home() {
       {/* Welcome to UCSB Gaucho Racing */}
       {/* </div> */}
       {/*     </div> */}
-      <div className='bg-home w-full h-4/5 md:h-full'>
+      <div className='bg-home w-full h-5/6 md:h-full'>
         <Scene />
       </div>
-      <div className='flex flex-1 md:hidden flex-col h-1/5 justify-end'>
-        <div className='h-32 flex flex-row justify-center'>
-          <motion.div
-            animate={{ y: 50 }}
-            transition={{
-              ease: 'linear',
-              repeat: Infinity,
-              repeatType: 'loop',
-              duration: 2,
-            }}
-          >
-            <ArrowheadDown size='36' />
-          </motion.div>
+      <div className='flex flex-1 md:hidden flex-col h-1/6 justify-start'>
+        <div className='flex flex-row space-x-2 justify-center'>
+          <CubeRotate size='40' />
+          <div className='rotate-text flex flex-col text-xl justify-center'>
+            Try rotating the car!
+          </div>
         </div>
+        <motion.div
+          className='flex flex-row justify-center'
+          animate={{ y: 50 }}
+          transition={{
+            ease: 'linear',
+            repeat: Infinity,
+            repeatType: 'loop',
+            duration: 2,
+          }}
+        >
+          <ArrowheadDown size='36' />
+        </motion.div>
       </div>
     </div>
   )
