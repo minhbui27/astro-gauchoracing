@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
+import { motion, useAnimationControls } from 'framer-motion'
 import '../styles/Nav.scss'
 import logo from '/logo-gold.png'
 const ContextContainer = React.createContext(null)
@@ -67,7 +68,7 @@ const MobileMenuButton = (): JSX.Element => {
 }
 
 const DesktopMenu = (): JSX.Element => {
-  const {curPage} = useContext(ContextContainer)
+  const { curPage } = useContext(ContextContainer)
   return (
     <>
       <div className='flex ml-1 sm:ml-0 justify-center sm:justify-start'>
@@ -75,8 +76,7 @@ const DesktopMenu = (): JSX.Element => {
         <div className='sae-text hidden lg:block px-3 py-3 md:text-sm lg:text-xl'>
           <a href='/'>UC Santa Barbara Gaucho Racing</a>
         </div>
-        <div className='sae-text hidden md:block px-3 py-3 md:text-sm lg:text-xl'>
-        </div>
+        <div className='sae-text hidden md:block px-3 py-3 md:text-sm lg:text-xl'></div>
       </div>
 
       <div className='flex ml-1 sm:ml-0 justify-center sm:justify-start'>
@@ -136,7 +136,7 @@ const DesktopMenu = (): JSX.Element => {
                 ' hidden sm:block md:hidden px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
               }
             >
-				FSAE
+              FSAE
             </a>
 
             <a
@@ -169,12 +169,53 @@ const DesktopMenu = (): JSX.Element => {
 }
 const MobileMenu = (): JSX.Element => {
   const { curPage, menuOpen } = useContext(ContextContainer)
+  const containerControls = useAnimationControls()
+  const container = {
+    hidden: { x: -500 },
+    show: {
+      x: 0,
+      transition: {
+        ease: 'easeIn',
+        staggerChildren: 0.2,
+		staggerDirection: 1,
+      },
+    },
+    hide: {
+      x: -500,
+      transition: {
+        ease: 'easeOut',
+        staggerChildren: 0.2,
+		staggerDirection: -1,
+		when: 'afterChildren'
+      },
+    },
+  }
+  const anchorAnimation = {
+    hidden: { opacity: 0, x: -300 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.2, ease: 'easeIn' } },
+    hide: {
+      opacity: 0,
+      x: -300,
+      transition: { duration: 0.1, ease: 'easeOut' },
+    },
+  }
+  useEffect(() => {
+    !menuOpen
+      ? containerControls.start('show')
+      : containerControls.start('hide')
+  }, [menuOpen])
   return (
     <>
-      <div className={!menuOpen ? 'block sm:hidden' : 'hidden'}>
-        <div className='px-2 pt-2 pb-3 space-y-1'>
+      <motion.div
+        initial='hidden'
+        variants={container}
+        animate={containerControls}
+        className='navbarColor block sm:hidden'
+      >
+        <motion.div className='px-2 pt-2 pb-3 space-y-1'>
           {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-          <a
+          <motion.a
+            variants={anchorAnimation}
             href='/'
             className={
               (curPage === 'Home'
@@ -185,9 +226,10 @@ const MobileMenu = (): JSX.Element => {
             aria-current='page'
           >
             Home
-          </a>
+          </motion.a>
 
-          <a
+          <motion.a
+            variants={anchorAnimation}
             href='/about'
             className={
               (curPage === 'About'
@@ -197,9 +239,10 @@ const MobileMenu = (): JSX.Element => {
             }
           >
             About
-          </a>
+          </motion.a>
 
-          <a
+          <motion.a
+            variants={anchorAnimation}
             href='/fsae'
             className={
               (curPage === 'FSAE'
@@ -209,8 +252,9 @@ const MobileMenu = (): JSX.Element => {
             }
           >
             Formula SAE Electric
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            variants={anchorAnimation}
             href='/sponsors'
             className={
               (curPage === 'Sponsors'
@@ -220,8 +264,9 @@ const MobileMenu = (): JSX.Element => {
             }
           >
             Sponsors
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            variants={anchorAnimation}
             href='/newsletter'
             className={
               (curPage === 'Newsletter'
@@ -231,27 +276,27 @@ const MobileMenu = (): JSX.Element => {
             }
           >
             Newsletter
-          </a>
-        </div>
-      </div>
+          </motion.a>
+        </motion.div>
+      </motion.div>
     </>
   )
 }
-export default function Nav(props: NavProps):JSX.Element {
+export default function Nav(props: NavProps): JSX.Element {
   const [menuOpen, setMenuOpen] = useState<boolean | null>(true)
   const curPage = props.currentPage
   console.log(props.currentPage)
   return (
-    <nav className='navbarColor'>
+    <nav>
       <ContextContainer.Provider value={{ curPage, menuOpen, setMenuOpen }}>
-        <div className='max-w-7xl px-2 sm:px-4 lg:px-6'>
+        <div className='navbarColor max-w-8xl px-2 sm:px-4 lg:px-6'>
           <div className='relative flex items-center justify-between h-16'>
             <MobileMenuButton />
             <DesktopMenu />
           </div>
         </div>
         {/* <!-- Mobile menu, show/hide based on menu state. --> */}
-		<MobileMenu/>
+        <MobileMenu />
       </ContextContainer.Provider>
     </nav>
   )

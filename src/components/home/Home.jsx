@@ -1,9 +1,8 @@
 import * as React from 'react'
-import { Suspense, useRef } from 'react'
+import { Suspense, useRef, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Html, Preload } from '@react-three/drei'
 import { ArrowheadDown } from '@styled-icons/evaicons-solid/ArrowheadDown'
-import { CubeRotate } from '@styled-icons/fluentui-system-filled/CubeRotate'
 import * as THREE from 'three'
 import '../../styles/Home.scss'
 import { ModelCar } from './Model_car'
@@ -59,22 +58,28 @@ function HtmlContent() {
       <div className='h-full bg-transparent flex flex-col justify-start'>
         <div className='h-20 md:h-24 w-full'></div>
         <div className='md:space-x-4 text-6xl lg:text-7xl select-none home-toptext flex flex-col md:flex-wrap md:flex-row justify-center'>
-          <div className='basis-auto flex flex-col text-start justify-center'>
+          <div className='text-5xl sm:text-6xl lg:text-7xl basis-auto flex flex-col text-start justify-center'>
             WELCOME TO
           </div>
           <div className='basis-auto flex flex-col text-start justify-center'>
-            <a className='ucsb-link'> UCSB </a>
+            <a className='ucsb-link' href='https://www.ucsb.edu/'>
+              {' '}
+              UCSB{' '}
+            </a>
           </div>
-          <div className='basis-auto flex flex-col text-start justify-center'>
+          <div className='text-5xl sm:text-6xl lg:text-7xl basis-auto flex flex-col text-start justify-center'>
             GAUCHO RACING
           </div>
         </div>
         <div className='hidden flex-1 md:flex flex-col justify-end'>
           <div className='flex flex-row space-x-4 justify-center'>
-            <CubeRotate size='48' />
-            <div className='rotate-text flex flex-col text-xl justify-center'>
+            <motion.div
+              animate={{ opacity: 0 }}
+              transition={{ duration: 2, delay: 5 }}
+              className='select-none rotate-text flex flex-col text-xl justify-center'
+            >
               Try rotating the car!
-            </div>
+            </motion.div>
           </div>
           <div className='h-32 flex flex-row justify-center'>
             <motion.div
@@ -137,7 +142,6 @@ function Scene() {
                   : [0, 0.25, 0]
                 : [0, 0, 0]
             }
-            rotation={[0, 0, 0]}
           >
             {/* This is a pink box used to debug and calibrate the center of the canvas, because the car model is off center, and upright */}
             {/* <mesh position={[0, 0, 0]}> */}
@@ -169,6 +173,7 @@ function Scene() {
         </Flex>
         <Preload all />
         <OrbitControls
+          camera={camera}
           maxPolarAngle={1.5}
           minPolarAngle={1.5}
           enablePan={false}
@@ -193,10 +198,13 @@ export default function Home() {
       </div>
       <div className='flex flex-1 md:hidden flex-col h-1/6 justify-start'>
         <div className='flex flex-row space-x-2 justify-center'>
-          <CubeRotate size='40' />
-          <div className='rotate-text flex flex-col text-xl justify-center'>
+          <motion.div
+            animate={{ opacity: 0 }}
+            transition={{ duration: 2, delay: 5 }}
+            className='select-none rotate-text flex flex-col text-xl justify-center'
+          >
             Try rotating the car!
-          </div>
+          </motion.div>
         </div>
         <motion.div
           className='flex flex-row justify-center'
