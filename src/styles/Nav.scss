@@ -4,21 +4,24 @@ $seagreenweb: #09847A;
 $aquaweb: #047C91;
 $mist: #9CBEBE;
 $lightgraydarken: #111517;
+$lightmist: #DAE6E6;
+$sandstone: #C9BF9D;
+$lightsandstone: #EDEADF;
 @font-face {
   font-family: 'Poppins-Medium';
   src: url(/Poppins-Medium.ttf) format('truetype');
 }
 .item-selected-bg {
-	background-color: #F4D35E;
+	background-color: $lightsandstone;
 	color: #083D77;
 }
 .text-items {
-	color: #EBEBD3;
+	color: $lightmist;
 }
 .sae-text {
 	font-family: 'Poppins-Medium';
-	color: #F4D35E;
+	color: $lightmist;
 }
 .navbarColor {
-	background-color: $navy;
+	background-color: $aquaweb;
 }

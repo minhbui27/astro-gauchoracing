@@ -1,12 +1,23 @@
-$lightgray: #dce1e5;
+$navy: #003660;
+$lightgray: #DCE1E5;
+$seagreenweb: #09847A;
+$aquaweb: #047C91;
+$mist: #9CBEBE;
 $lightgraydarken: #111517;
+$coral: #EF5645;
+$lightmist: #DAE6E6;
+$sandstone: #C9BF9D;
+$lightsandstone: #EDEADF;
+$moss: #6D7D33;
+$gold: #FEBC11;
+$seafoamgreen: #96CEB4;
 @media (min-width: 0px) {
   .ucsb-link {
     font-size: 4.5rem;
     font-family: 'Roboto Slab', serif;
     color: #febc11;
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: #003660;
+    -webkit-text-stroke-color: $aquaweb;
   }
 }
 @media (min-width: 768px) {
@@ -15,16 +26,17 @@ $lightgraydarken: #111517;
     font-family: 'Roboto Slab', serif;
     color: #febc11;
     -webkit-text-stroke-width: 5px;
-    -webkit-text-stroke-color: #003660;
+    -webkit-text-stroke-color: $aquaweb;
   }
 }
 @media (min-width: 1024px) {
   .ucsb-link {
     font-size: 10rem;
     font-family: 'Roboto Slab', serif;
-    color: #febc11;
+    // color: #9FE2BF; 
+	color: #A6DBBF;
     -webkit-text-stroke-width: 5px;
-    -webkit-text-stroke-color: #003660;
+    -webkit-text-stroke-color: $navy;
   }
 }
 .bg-home {
@@ -54,7 +66,7 @@ $lightgraydarken: #111517;
   background: white;
 }
 .line-gold {
-  background: #febc11;
+  background: $seafoamgreen;
 }
 .line-navy {
   background: #003660;
@@ -65,6 +77,7 @@ $lightgraydarken: #111517;
 }
 .home-toptext {
   font-family: 'Poppins', sans-serif;
+  color: $navy;
 }
 .rotate-text {
 	font-family: 'Roboto Slab', serif;

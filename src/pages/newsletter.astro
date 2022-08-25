@@ -14,10 +14,13 @@ import Newsletter from "../components/newsletter/Newsletter";
 </head>
 
 <body>
-	<Nav currentPage={"Newsletter"} client:visible/>
-	<Newsletter/>
-	<Footer/>
+	<div class="relative">
+		<div class="fixed z-50 w-screen">
+			<Nav currentPage={"Newsletter"} client:visible />
+		</div>
+		<Newsletter />
+		<Footer />
+	</div>
 </body>
 
 </html>
-

@@ -72,7 +72,7 @@ const DesktopMenu = (): JSX.Element => {
   return (
     <>
       <div className='flex ml-1 sm:ml-0 justify-center sm:justify-start'>
-        <img src={logo} className='object-scale-down h-12' alt='logo' />
+        {/* <img src={logo} className='object-scale-down h-12' alt='logo' /> */}
         <div className='sae-text hidden lg:block px-3 py-3 md:text-sm lg:text-xl'>
           <a href='/'>UC Santa Barbara Gaucho Racing</a>
         </div>
@@ -184,15 +184,12 @@ const MobileMenu = (): JSX.Element => {
       x: -500,
       transition: {
         ease: 'easeOut',
-        staggerChildren: 0.2,
-		staggerDirection: -1,
-		when: 'afterChildren'
       },
     },
   }
   const anchorAnimation = {
     hidden: { opacity: 0, x: -300 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.2, ease: 'easeIn' } },
+    show: { opacity: 1, x: 0, transition: { duration: 0.2, ease: 'linear' } },
     hide: {
       opacity: 0,
       x: -300,

@@ -14,10 +14,13 @@ import About from "../components/about/About"
 </head>
 
 <body>
-	<Nav currentPage={"About"} client:visible/>
-	<About/>
-	<Footer/>
+	<div class="relative">
+		<div class="fixed z-50 w-screen">
+			<Nav currentPage={"About"} client:visible />
+		</div>
+		<About />
+		<Footer />
+	</div>
 </body>
 
 </html>
-

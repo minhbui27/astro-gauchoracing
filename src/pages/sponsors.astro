@@ -14,10 +14,13 @@ import Sponsors from "../components/sponsors/Sponsors"
 </head>
 
 <body>
-	<Nav currentPage={"Sponsors"} client:visible/>
-	<Sponsors/>
-	<Footer/>
+	<div class="relative">
+		<div class="fixed z-50 w-screen">
+			<Nav currentPage={"Sponsors"} client:visible />
+		</div>
+		<Sponsors />
+		<Footer />
+	</div>
 </body>
 
 </html>
-

@@ -14,9 +14,14 @@ import Nav from "../components/Nav";
 </head>
 
 <body>
-	<Nav currentPage={"FSAE"} client:visible/>
-	<FormulaElectric/>
-	<Footer/>
+	<div class="relative">
+		<div class="fixed z-50 w-screen">
+			<Nav currentPage={"FSAE"} client:visible />
+		</div>
+		<FormulaElectric />
+		<Footer />
+	</div>
 </body>
 
 </html>
+
