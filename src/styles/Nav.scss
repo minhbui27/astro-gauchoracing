@@ -1,27 +1,28 @@
 $navy: #003660;
-$lightgray: #DCE1E5;
-$seagreenweb: #09847A;
-$aquaweb: #047C91;
-$mist: #9CBEBE;
+$lightgray: #dce1e5;
+$seagreenweb: #09847a;
+$aquaweb: #047c91;
+$mist: #9cbebe;
 $lightgraydarken: #111517;
-$lightmist: #DAE6E6;
-$sandstone: #C9BF9D;
-$lightsandstone: #EDEADF;
-@font-face {
-  font-family: 'Poppins-Medium';
-  src: url(/Poppins-Medium.ttf) format('truetype');
-}
+$lightmist: #dae6e6;
+$sandstone: #c9bf9d;
+$lightsandstone: #edeadf;
+$bdazzledblue: #345995;
+$cornyellow: #ffed65;
+$babypowder: #FDFFFC;
+$darkcornflowerblue: #324376;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 .item-selected-bg {
-	background-color: $lightsandstone;
-	color: #083D77;
+  background-color: $darkcornflowerblue;
+  color: $babypowder;
 }
 .text-items {
-	color: #FFE066;
+  color: #FDFFFC;
 }
 .sae-text {
-	font-family: 'Poppins-Medium';
-	color: #FFE45E;
+  font-family: 'Poppins';
+  color: $cornyellow;
 }
 .navbarColor {
-	background-color: #08415C;
+  background-color: $bdazzledblue;
 }

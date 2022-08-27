@@ -10,7 +10,10 @@ $sandstone: #C9BF9D;
 $lightsandstone: #EDEADF;
 $moss: #6D7D33;
 $gold: #FEBC11;
+$platinum: #E0E1DD;
+$cornyellow: #ffed65;
 $seafoamgreen: #96CEB4;
+$darkcornflowerblue: #324376;
 @media (min-width: 0px) {
   .ucsb-link {
     font-size: 4.5rem;
@@ -34,13 +37,13 @@ $seafoamgreen: #96CEB4;
     font-size: 10rem;
     font-family: 'Roboto Slab', serif;
     // color: #9FE2BF; 
-	color: #FFE45E;
+	color: $cornyellow;
     -webkit-text-stroke-width: 5px;
-    -webkit-text-stroke-color: $navy;
+    -webkit-text-stroke-color: $darkcornflowerblue;
   }
 }
 .bg-home {
-  background-color: #F5F5F5;
+  background-color: $platinum;
 }
 .bg-whoweare {
   height: 80vh;
@@ -66,7 +69,7 @@ $seafoamgreen: #96CEB4;
   background: white;
 }
 .line-gold {
-  background: $seafoamgreen;
+  background: $gold;
 }
 .line-navy {
   background: #003660;
@@ -77,7 +80,7 @@ $seafoamgreen: #96CEB4;
 }
 .home-toptext {
   font-family: 'Poppins', sans-serif;
-  color: $navy;
+  color: #324376;
 }
 .rotate-text {
 	font-family: 'Roboto Slab', serif;

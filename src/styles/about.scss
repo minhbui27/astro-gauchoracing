@@ -3,6 +3,13 @@ $seagreenweb: #09847A;
 $aquaweb: #047C91;
 $mist: #9CBEBE;
 $lightgraydarken: #111517;
+$platinum: #E0E1DD;
+$bittersweet: #F76C5E;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 .bg-about {
-	background-color: $lightgraydarken;
+	background-color: $platinum;
+}
+.about-text {
+	font-family: 'Poppins', serif;
+	color: $bittersweet;
 }
