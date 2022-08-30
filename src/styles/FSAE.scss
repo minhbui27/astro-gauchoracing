@@ -1,0 +1,29 @@
+$lightgray: #dce1e5;
+$seagreenweb: #09847a;
+$aquaweb: #047c91;
+$mist: #9cbebe;
+$lightgraydarken: #111517;
+$platinum: #e0e1dd;
+$bittersweet: #f76c5e;
+$bdazzledblue: #345995;
+$darkcornflowerblue: #324376;
+$cornyellow: #ffed65;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+.bg-fsae {
+  background-color: $platinum;
+}
+.bg-text {
+  background-color: $darkcornflowerblue;
+}
+.bg-image {
+  background-color: $platinum;
+}
+.text-about {
+  font-family: 'Poppins', serif;
+  color: $cornyellow;
+}
+.text-content {
+  font-family: 'Open Sans', serif;
+  color: $platinum;
+}
