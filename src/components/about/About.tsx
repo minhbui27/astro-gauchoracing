@@ -10,9 +10,9 @@ export default function About(): JSX.Element {
       <div className='my-4 about-text text-7xl flex justify-center px-4 flex-row w-full'>
         What we are about
       </div>
-      <div className='flex flex-col sm:flex-row h-full w-full'>
-        <div className='flex flex-col w-full sm:w-1/2'>
-          <div className='content-text text-xl md:text-3xl text-start flex justify-start px-4 flex-col'>
+      <div className='px-4 sm:px-16 md:px-32 flex flex-col lg:flex-row h-full w-full'>
+        <div className='flex flex-col w-full lg:w-1/2'>
+          <div className='content-text text-xl md:text-2xl text-start flex justify-start px-4 flex-col'>
             <p>
               We envision the current academic year, 2020-2021, as a period of
               organization and resource-building.
@@ -32,7 +32,7 @@ export default function About(): JSX.Element {
             </p>
           </div>
         </div>
-        <div className='order-first flex flex-row flex-wrap w-full sm:w-1/2'>
+        <div className='order-first flex flex-row flex-wrap w-full lg:w-1/2'>
           <div className='p-2 space-y-2 justify-center flex flex-1 flex-col'>
             <img src={img2} />
           </div>
