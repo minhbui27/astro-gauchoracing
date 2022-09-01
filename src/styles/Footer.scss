@@ -2,12 +2,13 @@ $navy: #003660;
 $lightmist: #DAE6E6;
 $aquaweb: #047C91;
 $bdazzledblue: #345995;
+$seagreenweb: #09847a;
 @font-face {
   font-family: 'Poppins-Medium';
   src: url(/Poppins-Medium.ttf) format('truetype');
 }
 .bg-footer {
-  background-color: $bdazzledblue;
+  background-color: $seagreenweb;
 }
 .content-1 {
   font-family: "Poppins-Medium";

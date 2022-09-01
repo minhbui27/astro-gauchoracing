@@ -12,7 +12,7 @@ export default function About(): JSX.Element {
       </div>
       <div className='px-4 sm:px-16 md:px-32 flex flex-col lg:flex-row h-full w-full'>
         <div className='flex flex-col w-full lg:w-1/2'>
-          <div className='content-text text-xl md:text-2xl text-start flex justify-start px-4 flex-col'>
+          <div className='content-text text-xl md:text-3xl text-start flex justify-start px-4 flex-col'>
             <p>
               We envision the current academic year, 2020-2021, as a period of
               organization and resource-building.

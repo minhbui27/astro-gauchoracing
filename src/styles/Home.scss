@@ -37,17 +37,17 @@ $darkcornflowerblue: #324376;
     font-size: 10rem;
     font-family: 'Roboto Slab', serif;
     // color: #9FE2BF; 
-	color: $cornyellow;
+	color: #FEBC11; 
     -webkit-text-stroke-width: 5px;
     -webkit-text-stroke-color: $darkcornflowerblue;
   }
 }
 .bg-home {
-  background-color: $platinum;
+  background-color: #DCE1E5; 
 }
 .bg-whoweare {
   height: 80vh;
-  background-color: $lightgraydarken;
+  background-color: $navy;
 }
 .big-text {
   font-size: 40px;
@@ -62,7 +62,7 @@ $darkcornflowerblue: #324376;
   background-color: #807e78;
 }
 .bg-textbox {
-  background-color: $lightgraydarken;
+  background-color: $navy;
 }
 .line-white {
   height: 8%;
@@ -84,4 +84,13 @@ $darkcornflowerblue: #324376;
 }
 .rotate-text {
 	font-family: 'Roboto Slab', serif;
+}
+.wwa-container {
+	border-color: $lightmist;
+}
+.bg-about-boxes {
+	background-color: #DCE1E5;
+}
+.bg-box {
+	background-color: $navy;
 }
