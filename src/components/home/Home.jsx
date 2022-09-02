@@ -6,6 +6,7 @@ import { ArrowheadDown } from '@styled-icons/evaicons-solid/ArrowheadDown'
 import * as THREE from 'three'
 import '../../styles/Home.scss'
 import { ModelCar } from './Model_car'
+import { Model } from './Sae'
 import { Flex, Box } from '@react-three/flex'
 import { motion } from 'framer-motion'
 import { LoadingScreen } from './HomeHelpers'
@@ -158,6 +159,7 @@ function Scene() {
             />
             <Box width='auto' height='auto' centerAnchor>
               <Car responsiveWidth={responsiveWidth} />
+				{/* <Model scale={0.1}/> */}
             </Box>
             <group>
               <mesh
@@ -174,8 +176,8 @@ function Scene() {
         <Preload all />
         <OrbitControls
           camera={camera}
-          maxPolarAngle={1.5}
-          minPolarAngle={1.5}
+          // maxPolarAngle={1.5}
+          // minPolarAngle={1.5}
           enablePan={false}
           enableZoom={false}
         />
