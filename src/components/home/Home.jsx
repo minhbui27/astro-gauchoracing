@@ -16,10 +16,10 @@ export function Car(props) {
   // console.log(props.responsiveWidth)
   const scale =
     props.responsiveWidth == 'lg'
-      ? 0.0035
+      ? 0.12
       : props.responsiveWidth == 'md'
-      ? 0.0025
-      : 0.0015
+      ? 0.08
+      : 0.04
   const rotation =
     props.responsiveWidth == 'lg'
       ? [0, -Math.PI / 2, 0]
@@ -39,8 +39,8 @@ export function Car(props) {
       <pointLight position={[3, 5, 3]} color={'#003660'} intensity={10} />
       <pointLight position={[-3, 5, 3]} color={'#FEBC11'} intensity={2} />
       <group position={[0, -1, 0]}>
-        <group position={position}>
-          <ModelCar scale={scale} rotation={rotation} />
+        <group>
+          <Model scale={scale} rotation={rotation} />
         </group>
         {/* <OrbitControls/> */}
       </group>
@@ -145,10 +145,10 @@ function Scene() {
             }
           >
             {/* This is a pink box used to debug and calibrate the center of the canvas, because the car model is off center, and upright */}
-            {/* <mesh position={[0, 0, 0]}> */}
-            {/*   <boxBufferGeometry args={[0.1, 0.1, 0.1]} attach='geometry' /> */}
-            {/*   <meshBasicMaterial color='hotpink' attach='material' /> */}
-            {/* </mesh> */}
+            <mesh position={[0, 0, 0]}>
+              <boxBufferGeometry args={[0.1, 0.1, 0.1]} attach='geometry' />
+              <meshBasicMaterial color='hotpink' attach='material' />
+            </mesh>
             <fog attach='fog' args={['white', 0, 40]} />
             <ambientLight intensity={0.1} />
             <directionalLight
