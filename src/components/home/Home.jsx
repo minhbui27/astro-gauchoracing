@@ -5,42 +5,23 @@ import { OrbitControls, Html, Preload } from '@react-three/drei'
 import { ArrowheadDown } from '@styled-icons/evaicons-solid/ArrowheadDown'
 import * as THREE from 'three'
 import '../../styles/Home.scss'
-import { ModelCar } from './Model_car'
 import { Model } from './Sae'
-import { Flex, Box } from '@react-three/flex'
 import { motion } from 'framer-motion'
 import { LoadingScreen } from './HomeHelpers'
 export function Car(props) {
-  // const camera = new THREE.PerspectiveCamera(40, 1 ,1, 10000)
-  // camera.position.set(50,5,40)
-  // console.log(props.responsiveWidth)
   const scale =
     props.responsiveWidth == 'lg'
       ? 0.12
       : props.responsiveWidth == 'md'
       ? 0.08
       : 0.04
-  const rotation =
-    props.responsiveWidth == 'lg'
-      ? [0, -Math.PI / 2, 0]
-      : props.responsiveWidth == 'md'
-      ? [0, -Math.PI / 2, 0]
-      : [Math.PI / 2, 0, 0]
-  const position =
-    props.responsiveWidth == 'lg' || props.responsiveWidth == 'md'
-      ? [
-          (1.25 * scale) / 0.001,
-          (-0.175 * scale) / 0.001,
-          (-0.775 * scale) / 0.001,
-        ]
-      : [-1.665, 3, -0.5]
   return (
     <group>
       <pointLight position={[3, 5, 3]} color={'#003660'} intensity={10} />
       <pointLight position={[-3, 5, 3]} color={'#FEBC11'} intensity={2} />
-      <group position={[0, -1, 0]}>
+      <group>
         <group>
-          <Model scale={scale} rotation={rotation} />
+          <Model scale={scale}/>
         </group>
         {/* <OrbitControls/> */}
       </group>
@@ -129,13 +110,12 @@ function Scene() {
           </Html>
         }
       >
-        <Flex
-          flexDirection='column'
-          justifyContent='center'
-          alignItems='center'
-        >
           <HtmlContent />
           <group
+			rotation={responsiveWidth == 'sm' ? 
+				[Math.PI/2,0,0] : 
+				[0,-Math.PI/2,0]
+			}
             position={
               responsiveWidth == 'sm'
                 ? height > 825
@@ -157,10 +137,7 @@ function Scene() {
               shadow-mapSize-height={512}
               shadow-mapSize-width={512}
             />
-            <Box width='auto' height='auto' centerAnchor>
-              <Car responsiveWidth={responsiveWidth} />
-				{/* <Model scale={0.1}/> */}
-            </Box>
+              <Car castShadows rotation={[0,0,0]} responsiveWidth={responsiveWidth} />
             <group>
               <mesh
                 receiveShadow
@@ -172,7 +149,6 @@ function Scene() {
               </mesh>
             </group>
           </group>
-        </Flex>
         <Preload all />
         <OrbitControls
           camera={camera}

@@ -9,18 +9,18 @@ export function Model(props) {
   const { nodes, materials } = useGLTF('/sae.gltf')
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Mesh_0.geometry} material={materials.Material_0} position={[26.21, -0.92, -47.62]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
-      <mesh geometry={nodes.Tires.geometry} material={materials.Tire} position={[26.21, -0.92, -47.62]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
-      <group position={[26.21, -0.92, -47.62]} rotation={[-Math.PI, 0, 0]} scale={-0.03}>
+      <group position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03}>
         <mesh geometry={nodes.Mesh_0004.geometry} material={materials.Material_0} />
         <mesh geometry={nodes.Mesh_0004_1.geometry} material={materials['Front Bumper']} />
       </group>
-      <mesh geometry={nodes.Wheels.geometry} material={materials.Wheels} position={[26.21, -0.92, -47.62]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
-      <group position={[26.21, -0.92, -47.62]} rotation={[-Math.PI, 0, 0]} scale={-0.03}>
+      <mesh geometry={nodes.Mesh_0.geometry} material={materials.Material_0} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
+      <mesh geometry={nodes.Metal_Frame.geometry} material={materials['Metal Frame']} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
+      <group position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03}>
         <mesh geometry={nodes.Mesh_0006.geometry} material={materials.Material_0} />
         <mesh geometry={nodes.Mesh_0006_1.geometry} material={materials.Spoiler} />
       </group>
-      <mesh geometry={nodes.Metal_Frame.geometry} material={materials['Metal Frame']} position={[26.21, -0.92, -47.62]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
+      <mesh geometry={nodes.Tires.geometry} material={materials.Tire} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
+      <mesh geometry={nodes.Wheels.geometry} material={materials.Wheels} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
     </group>
   )
 }
