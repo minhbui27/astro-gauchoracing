@@ -13,7 +13,10 @@ export function Model(props) {
         <mesh geometry={nodes.Mesh_0004.geometry} material={materials.Material_0} />
         <mesh geometry={nodes.Mesh_0004_1.geometry} material={materials['Front Bumper']} />
       </group>
-      <mesh geometry={nodes.Mesh_0.geometry} material={materials.Material_0} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
+      <group position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03}>
+        <mesh geometry={nodes.Mesh_0_1.geometry} material={materials.Material_0} />
+        <mesh geometry={nodes.Mesh_0_2.geometry} material={materials.Body} />
+      </group>
       <mesh geometry={nodes.Metal_Frame.geometry} material={materials['Metal Frame']} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
       <group position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03}>
         <mesh geometry={nodes.Mesh_0006.geometry} material={materials.Material_0} />
@@ -21,6 +24,10 @@ export function Model(props) {
       </group>
       <mesh geometry={nodes.Tires.geometry} material={materials.Tire} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
       <mesh geometry={nodes.Wheels.geometry} material={materials.Wheels} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
+      <group position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03}>
+        <mesh geometry={nodes.Mesh_0003.geometry} material={materials['Wheels.001']} />
+        <mesh geometry={nodes.Mesh_0003_1.geometry} material={materials['Brake Calipers']} />
+      </group>
     </group>
   )
 }

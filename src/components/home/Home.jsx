@@ -13,8 +13,8 @@ export function Car(props) {
     props.responsiveWidth == 'lg'
       ? 0.12
       : props.responsiveWidth == 'md'
-      ? 0.08
-      : 0.04
+      ? 0.1
+      : 0.05
   return (
     <group>
       <pointLight position={[3, 5, 3]} color={'#003660'} intensity={10} />
@@ -137,7 +137,7 @@ function Scene() {
               shadow-mapSize-height={512}
               shadow-mapSize-width={512}
             />
-              <Car castShadows rotation={[0,0,0]} responsiveWidth={responsiveWidth} />
+              <Car castShadow rotation={[0,0,0]} responsiveWidth={responsiveWidth} />
             <group>
               <mesh
                 receiveShadow
@@ -152,8 +152,8 @@ function Scene() {
         <Preload all />
         <OrbitControls
           camera={camera}
-          // maxPolarAngle={1.5}
-          // minPolarAngle={1.5}
+          maxPolarAngle={1.5}
+          minPolarAngle={1.5}
           enablePan={false}
           enableZoom={false}
         />
