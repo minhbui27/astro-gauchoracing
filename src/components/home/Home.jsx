@@ -132,7 +132,6 @@ function Scene() {
           {/*   <meshBasicMaterial color='hotpink' attach='material' /> */}
           {/* </mesh> */}
           <fog attach='fog' args={['white', 0, 40]} />
-          <ambientLight intensity={0.1} />
           <directionalLight
             intensity={0.5}
             castShadow
@@ -143,7 +142,7 @@ function Scene() {
           <mesh
             receiveShadow
             rotation={[-Math.PI / 2, 0, 0]}
-            position={responsiveWidth == 'sm' ? [0, -3, -4] : [0, -2.5, -4]}
+            position={responsiveWidth == 'sm' ? [0, -3, -4] : [0, -2, -4]}
           >
             <planeBufferGeometry attach='geometry' args={[100, 100]} />
             <shadowMaterial attach='material' opacity={0.3} />
@@ -162,8 +161,7 @@ function Scene() {
   )
 }
 export default function Home(props) {
-	console.log(props.vWidth)
-  return (
+  return(
     <div className='bg-home w-full h-screen'>
       {/*     <div className='flex-1 flex-col justify-center w-full h-1/5'> */}
       {/* <div className='flex-1 h-16 w-full'></div> */}

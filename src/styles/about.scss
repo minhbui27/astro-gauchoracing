@@ -1,4 +1,5 @@
 $lightgray: #DCE1E5;
+$navy: #003660;
 $seagreenweb: #09847A;
 $aquaweb: #047C91;
 $mist: #9CBEBE;
@@ -8,13 +9,14 @@ $bittersweet: #F76C5E;
 $bdazzledblue: #345995;
 $darkcornflowerblue: #324376;
 $cornyellow: #ffed65;
+$babypowder: #FDFFFC;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 .bg-about {
 	background-color: $platinum;
 }
 .about-text {
 	font-family: 'Poppins', serif;
-	color: $bittersweet;
+	color: $navy;
 }
 .content-text {
 	font-family: 'Open Sans', serif;
@@ -25,7 +27,7 @@ $cornyellow: #ffed65;
 }
 .text-officers {
 	font-family: 'Poppins', serif;
-	color: $cornyellow;
+	color: $babypowder;
 }
 .text-officers-info {
 	color: $platinum;

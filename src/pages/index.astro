@@ -3,11 +3,9 @@ import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav';
 import WhoWeAre from '../components/home/WhoWeAre.astro';
 import Home from '../components/home/Home'
-import XElement from 'astro-xelement';
 import ContentCards from '../components/home/ContentCards';
-let width = 0;
-const { HomePage } = XElement
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,16 +21,7 @@ const { HomePage } = XElement
 		<div class="fixed z-50 w-screen">
 			<Nav currentPage={"Home"} client:visible />
 		</div>
-		<HomePage @is="div" @visible={()=> {
-			width =
-			window.innerWidth ||
-			document.documentElement.clientWidth ||
-			document.body.clientWidth;
-			console.log(width)
-			}}
-			>
-			<Home client:only='react' />
-		</HomePage>
+		<Home client:only='react' />
 		<ContentCards client:idle />
 		<WhoWeAre />
 		<Footer />
