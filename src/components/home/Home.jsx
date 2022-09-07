@@ -9,21 +9,27 @@ import { Model } from './Sae'
 import { motion } from 'framer-motion'
 import { LoadingScreen } from './HomeHelpers'
 export function Car(props) {
-  const scale =
-    props.responsiveWidth == 'lg'
-      ? 0.12
-      : props.responsiveWidth == 'md'
-      ? 0.1
-      : 0.05
   return (
     <group>
       <pointLight position={[3, 5, 3]} color={'#003660'} intensity={10} />
       <pointLight position={[-3, 5, 3]} color={'#FEBC11'} intensity={2} />
       <group>
         <group>
-          <Model scale={scale}/>
+          <Model
+            rotation={
+              props.responsiveWidth == 'sm'
+                ? [Math.PI / 2, 0, 0]
+                : [0, -Math.PI / 2, 0]
+            }
+            scale={
+              props.responsiveWidth == 'lg'
+                ? 0.12
+                : props.responsiveWidth == 'md'
+                ? 0.1
+                : 0.05
+            }
+          />
         </group>
-        {/* <OrbitControls/> */}
       </group>
     </group>
   )
@@ -110,45 +116,39 @@ function Scene() {
           </Html>
         }
       >
-          <HtmlContent />
-          <group
-			rotation={responsiveWidth == 'sm' ? 
-				[Math.PI/2,0,0] : 
-				[0,-Math.PI/2,0]
-			}
-            position={
-              responsiveWidth == 'sm'
-                ? height > 825
-                  ? [0, 0, 0]
-                  : [0, 0.25, 0]
-                : [0, 0, 0]
-            }
+        <HtmlContent />
+        <group
+          position={
+            responsiveWidth == 'sm'
+              ? height > 825
+                ? [0, 0, 0]
+                : [0, 0.25, 0]
+              : [0, 0, 0]
+          }
+        >
+          {/* This is a pink box used to debug and calibrate the center of the canvas, because the car model is off center, and upright */}
+          {/* <mesh position={[0, 0, 0]}> */}
+          {/*   <boxBufferGeometry args={[0.1, 0.1, 0.1]} attach='geometry' /> */}
+          {/*   <meshBasicMaterial color='hotpink' attach='material' /> */}
+          {/* </mesh> */}
+          <fog attach='fog' args={['white', 0, 40]} />
+          <ambientLight intensity={0.1} />
+          <directionalLight
+            intensity={0.5}
+            castShadow
+            shadow-mapSize-height={512}
+            shadow-mapSize-width={512}
+          />
+          <Car responsiveWidth={responsiveWidth} />
+          <mesh
+            receiveShadow
+            rotation={[-Math.PI / 2, 0, 0]}
+            position={responsiveWidth == 'sm' ? [0, -3, -4] : [0, -2.5, -4]}
           >
-            {/* This is a pink box used to debug and calibrate the center of the canvas, because the car model is off center, and upright */}
-            <mesh position={[0, 0, 0]}>
-              <boxBufferGeometry args={[0.1, 0.1, 0.1]} attach='geometry' />
-              <meshBasicMaterial color='hotpink' attach='material' />
-            </mesh>
-            <fog attach='fog' args={['white', 0, 40]} />
-            <ambientLight intensity={0.1} />
-            <directionalLight
-              intensity={0.5}
-              castShadow
-              shadow-mapSize-height={512}
-              shadow-mapSize-width={512}
-            />
-              <Car castShadow rotation={[0,0,0]} responsiveWidth={responsiveWidth} />
-            <group>
-              <mesh
-                receiveShadow
-                rotation={[-Math.PI / 2, 0, 0]}
-                position={responsiveWidth == 'sm' ? [0, -3, -4] : [0, -2.5, -4]}
-              >
-                <planeBufferGeometry attach='geometry' args={[100, 100]} />
-                <shadowMaterial attach='material' opacity={0.3} />
-              </mesh>
-            </group>
-          </group>
+            <planeBufferGeometry attach='geometry' args={[100, 100]} />
+            <shadowMaterial attach='material' opacity={0.3} />
+          </mesh>
+        </group>
         <Preload all />
         <OrbitControls
           camera={camera}
@@ -161,7 +161,8 @@ function Scene() {
     </Canvas>
   )
 }
-export default function Home() {
+export default function Home(props) {
+	console.log(props.vWidth)
   return (
     <div className='bg-home w-full h-screen'>
       {/*     <div className='flex-1 flex-col justify-center w-full h-1/5'> */}

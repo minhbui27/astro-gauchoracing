@@ -10,23 +10,23 @@ export function Model(props) {
   return (
     <group {...props} dispose={null}>
       <group position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03}>
-        <mesh geometry={nodes.Mesh_0004.geometry} material={materials.Material_0} />
-        <mesh geometry={nodes.Mesh_0004_1.geometry} material={materials['Front Bumper']} />
+        <mesh castShadow receiveShadow geometry={nodes.Mesh_0004.geometry} material={materials.Material_0} />
+        <mesh castShadow receiveShadow geometry={nodes.Mesh_0004_1.geometry} material={materials['Front Bumper']} />
       </group>
       <group position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03}>
-        <mesh geometry={nodes.Mesh_0_1.geometry} material={materials.Material_0} />
-        <mesh geometry={nodes.Mesh_0_2.geometry} material={materials.Body} />
+        <mesh castShadow receiveShadow geometry={nodes.Mesh_0_1.geometry} material={materials.Material_0} />
+        <mesh castShadow receiveShadow geometry={nodes.Mesh_0_2.geometry} material={materials.Body} />
       </group>
-      <mesh geometry={nodes.Metal_Frame.geometry} material={materials['Metal Frame']} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
+      <mesh castShadow receiveShadow geometry={nodes.Metal_Frame.geometry} material={materials['Metal Frame']} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
       <group position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03}>
-        <mesh geometry={nodes.Mesh_0006.geometry} material={materials.Material_0} />
-        <mesh geometry={nodes.Mesh_0006_1.geometry} material={materials.Spoiler} />
+        <mesh castShadow receiveShadow geometry={nodes.Mesh_0006.geometry} material={materials.Material_0} />
+        <mesh castShadow receiveShadow geometry={nodes.Mesh_0006_1.geometry} material={materials.Spoiler} />
       </group>
-      <mesh geometry={nodes.Tires.geometry} material={materials.Tire} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
-      <mesh geometry={nodes.Wheels.geometry} material={materials.Wheels} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
+      <mesh castShadow receiveShadow geometry={nodes.Tires.geometry} material={materials.Tire} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
+      <mesh castShadow receiveShadow geometry={nodes.Wheels.geometry} material={materials.Wheels} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03} />
       <group position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={-0.03}>
-        <mesh geometry={nodes.Mesh_0003.geometry} material={materials['Wheels.001']} />
-        <mesh geometry={nodes.Mesh_0003_1.geometry} material={materials['Brake Calipers']} />
+        <mesh castShadow receiveShadow geometry={nodes.Mesh_0003.geometry} material={materials['Wheels.001']} />
+        <mesh castShadow receiveShadow geometry={nodes.Mesh_0003_1.geometry} material={materials['Brake Calipers']} />
       </group>
     </group>
   )
