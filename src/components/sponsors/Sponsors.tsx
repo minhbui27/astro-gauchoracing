@@ -33,8 +33,8 @@ const Sponsors = (): JSX.Element => {
         <div className='text-center justify-center text-4xl md:text-6xl lg:text-7xl flex flex-col our-sponsors h-32 w-full'>
           Individual Donors
         </div>
-        <div className='px-32 flex flex-row justify-center'>
-          <div className='space-y-2 text-2xl flex-1 flex flex-row justify-center'>
+        <div className='my-8 px-8 md:px-32 flex flex-row justify-center'>
+          <div className='hidden space-y-2 text-2xl flex-1 md:flex flex-row justify-center'>
 			<div className='flex flex-col'>
             <p>Eli Bocek-Rivele</p>
             <p>Vin Tran</p>
@@ -45,7 +45,7 @@ const Sponsors = (): JSX.Element => {
             <p>Vedant Shah</p>
 			</div>
           </div>
-          <div className='space-y-2 text-2xl flex-1 flex flex-row justify-center'>
+          <div className='hidden space-y-2 text-2xl flex-1 md:flex flex-row justify-center'>
 			<div className='flex flex-col'>
             <p>Andrew Peng</p>
             <p>Stephen Rivele</p>
@@ -55,11 +55,38 @@ const Sponsors = (): JSX.Element => {
             <p>Owen Knudsen</p>
 			</div>
           </div>
-          <div className='space-y-2 text-2xl flex-1 flex flex-row justify-center'>
+          <div className='hidden space-y-2 text-2xl flex-1 md:flex flex-row justify-center'>
 			<div className='flex flex-col'>
             <p>Mark Allen</p>
             <p>Appan Thirumaligai</p>
             <p>Biao Chen</p>
+            <p>Dan LeVier</p>
+            <p>Stephen Wong</p>
+            <p>Lisa Marchese</p>
+			</div>
+          </div>
+          <div className='md:hidden space-y-2 text-2xl flex-1 flex flex-row justify-center'>
+			<div className='flex flex-col'>
+            <p>Eli Bocek-Rivele</p>
+            <p>Vin Tran</p>
+            <p>Alen Iqbal</p>
+            <p>Kelly Yan</p>
+            <p>Mark Allen</p>
+            <p>Charles Evans</p>
+            <p>Vedant Shah</p>
+            <p>Mark Allen</p>
+            <p>Appan Thirumaligai</p>
+            <p>Biao Chen</p>
+			</div>
+          </div>
+          <div className='md:hidden space-y-2 text-2xl flex-1 flex flex-row justify-center'>
+			<div className='flex flex-col'>
+            <p>Andrew Peng</p>
+            <p>Stephen Rivele</p>
+            <p>Jennifer Hata</p>
+            <p>Collin Dunner</p>
+            <p>Dylan Pratt</p>
+            <p>Owen Knudsen</p>
             <p>Dan LeVier</p>
             <p>Stephen Wong</p>
             <p>Lisa Marchese</p>
