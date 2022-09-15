@@ -1,7 +1,8 @@
 ---
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav";
-import Sponsors from "../components/sponsors/Sponsors"
+import Sponsors from "../components/sponsors/Sponsors";
+import IndividualDonors from "../components/sponsors/IndividualDonors.astro";
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +19,8 @@ import Sponsors from "../components/sponsors/Sponsors"
 		<div class="fixed z-50 w-screen">
 			<Nav currentPage={"Sponsors"} client:visible />
 		</div>
-		<Sponsors />
+		<Sponsors/>
+		<IndividualDonors/>
 		<Footer />
 	</div>
 </body>

@@ -1,0 +1,30 @@
+---
+import { getServerSideProps } from "./SponsorSheets"
+async function getData() {
+	const response = await getServerSideProps([2, 100]);
+	const data = response.data.values;
+	return data
+}
+const names = await getData();
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<title>Sponsors</title>
+</head>
+
+<body>
+	<div class="content h-screen w-full">
+		{names.map(e => e[0]).map(element => (
+		<>
+			<p> {element} </p>
+		</>
+		))}
+	</div>
+</body>
+
+</html>

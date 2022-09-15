@@ -14,21 +14,19 @@ export default function About(): JSX.Element {
         <div className='flex flex-col w-full lg:w-1/2'>
           <div className='content-text text-xl md:text-3xl text-start flex justify-start px-4 flex-col'>
             <p>
-              We envision the current academic year, 2020-2021, as a period of
-              organization and resource-building.
+              Gaucho Racing is the continuation of a long history of motorsports
+              in Santa Barbara. Though teams have come and gone, it is our goal
+              to create something that is lasting and will persevere through the
+              years to highlight the engineering and business prowess of UC
+              Santa Barbara Students. We put a strong focus on educating new
+              members, providing them with the tools they need to succeed, both
+              in school and outside.
             </p>
             <br></br>
             <p>
-              This will include assembling a team, holding regular meetings in
-              consultation with faculty advisors, finding the necessary fiscal
-              and material resources, and undertaking the research and
-              development phase of our project.
-            </p>
-            <br></br>
-            <p>
-              In the academic year 2021/2022, we plan to design and construct
-              and test a fully electric vehicle within the FSAE framework and to
-              enter it in the intercollegiate SAE Electric competition.
+              Gaucho Racing strives to build a diverse and multidisciplinary
+              team, able to challenge each other&apos;s ideas and assumptions,
+              as we believe this leads to the best work, innovation and growth.
             </p>
           </div>
         </div>
@@ -52,20 +50,21 @@ export default function About(): JSX.Element {
       <div className='py-8 flex flex-col sm:flex-row h-full w-full'>
         <div className='mx-4 sm:mx-12 md:mx-32 content-text text-xl md:text-3xl text-start flex justify-start px-4 flex-col'>
           <p>
-            Our Gaucho Racing project will enable students to gain hands-on
-            experience in all phases of automotive design and construction,
-            offering opportunities to acquire skills and knowledge beyond the
-            theoretical, and to test the product of their learning against teams
-            from around the country and across the globe.
+            Gaucho Racing aims to enable students to gain hands-on experience in
+            all phases of the engineering process and propel them forward into
+            their careers. As part of UCSB’s official SAE International Student
+            Chapter, our main focus is to participate each year in the Formula
+            SAE Electric Competition. This involves students working together as
+            a team to research, design, and manufacture a single seater electric
+            race car from the ground up. Our team is also responsible for
+            funding this project each year which will connect our students with
+            industry sponsors and build crucial relationships for our success.
+            Through this project, students will gain essential engineering and
+            networking skills in demand in this industry and be prepared to
+            launch their futures in engineering.
           </p>
 
           {/* <p>While we will be reviving a UCSB Engineering tradition after a five-year hiatus, we wish to make it clear that participation in our team is not limited to engineering students.</p> */}
-          <br></br>
-          <p>
-            All UCSB students are invited to contribute their skills, ideas,
-            energy, and enthusiasm to our effort to keep alive the spirit of
-            innovation and success which has characterized Gaucho Racing.
-          </p>
         </div>
       </div>
       <div className='bg-officers h-screen w-full'>

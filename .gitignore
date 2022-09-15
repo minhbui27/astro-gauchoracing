@@ -1,4 +1,7 @@
 # build output
+
+secrets.json
+
 dist/
 .output/
 

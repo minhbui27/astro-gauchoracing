@@ -11,18 +11,21 @@ $bdazzledblue: #345995;
 $cornyellow: #ffed65;
 $babypowder: #FDFFFC;
 $darkcornflowerblue: #324376;
+$lightblue: rgb(56,164,208);
+$darkgreen: #12574A;
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 .item-selected-bg {
-  background-color: $darkcornflowerblue;
+  background-color: $aquaweb;
   color: $babypowder;
 }
 .text-items {
-  color: $babypowder;
+  color: $babypowder; 
 }
 .sae-text {
   font-family: 'Poppins';
   color: white;
 }
 .navbarColor {
-  background-color: $seagreenweb; 
+  background-color: $lightblue; 
 }

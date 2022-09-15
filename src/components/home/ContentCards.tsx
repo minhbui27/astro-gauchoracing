@@ -12,15 +12,19 @@ export default function ContentCards(): JSX.Element {
               alt=''
             />
           </div>
-          <div className='w-3/5 md:w-full h-full md:h-3/5 flex flex-col justify-center'>
-            <div className='text-3xl text-white w-full h-3/5 flex flex-row'>
-              <div className='w-1/5 h-full'></div>
-              <div className='w-3/5 h-full'>
+          <div className='flex flex-row justify-center pt-4 text-white text-4xl'>
+            Newsletter
+          </div>
+          <div className='w-3/5 md:w-full h-full md:h-3/5 flex flex-col justify-start'>
+            <div className='text-xl text-white w-full flex flex-row'>
+              <div className='px-8 py-8 h-full'>
                 <p className='w-full h-full'>
-                  test test test test test test test test
+                  In order to stay updated on our team, please be sure to sign
+                  up for our quarterly newsletter! This newsletter features
+                  progress from our subteams, exclusive pictures and videos, and
+                  other information regarding the Gaucho Racing Project.
                 </p>
               </div>
-              <div className='w-1/5 h-full'></div>
             </div>
           </div>
         </div>
@@ -34,15 +38,20 @@ export default function ContentCards(): JSX.Element {
               alt=''
             />
           </div>
-          <div className='w-3/5 md:w-full h-full md:h-3/5 flex flex-col justify-center'>
-            <div className='text-3xl text-white w-full h-3/5 flex flex-row'>
-              <div className='w-1/5 h-full'></div>
-              <div className='w-3/5 h-full'>
+          <div className='flex flex-row justify-center pt-4 text-white text-4xl'>
+            Our team
+          </div>
+          <div className='w-3/5 md:w-full h-full md:h-3/5 flex flex-col justify-start'>
+            <div className='text-xl text-white w-full flex flex-row'>
+              <div className='px-8 py-8 h-full'>
                 <p className='w-full h-full'>
-                  test test test test test test test test
+                  Gaucho Racing is part of UCSB’s official SAE International
+                  Student Chapter and uses this connection to connect students
+                  with industry professionals, build relationships, and perform
+                  educational outreach. To learn more about our officers and
+                  current members, click here!
                 </p>
               </div>
-              <div className='w-1/5 h-full'></div>
             </div>
           </div>
         </div>
@@ -56,15 +65,16 @@ export default function ContentCards(): JSX.Element {
               alt=''
             />
           </div>
-          <div className='w-3/5 md:w-full h-full md:h-3/5 flex flex-col justify-center'>
-            <div className='text-3xl text-white w-full h-3/5 flex flex-row'>
-              <div className='w-1/5 h-full'></div>
-              <div className='w-3/5 h-full'>
+          <div className='flex flex-row justify-center pt-4 text-white text-4xl'>
+			Sponsorships
+          </div>
+          <div className='w-3/5 md:w-full h-full md:h-3/5 flex flex-col justify-start'>
+            <div className='text-xl text-white w-full flex flex-row'>
+              <div className='px-8 py-8 h-full'>
                 <p className='w-full h-full'>
-                  test test test test test test test test
+				Our sponsorships are integral to our team. We are immensely grateful for the support of our sponsors, as they have and will continue to allow for us to apply our passion and knowledge of automotive engineering outside of the classroom.
                 </p>
               </div>
-              <div className='w-1/5 h-full'></div>
             </div>
           </div>
         </div>
