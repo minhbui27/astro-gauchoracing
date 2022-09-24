@@ -6,7 +6,7 @@ async function getData() {
 	return data
 }
 const names = await getData();
-console.log(names)
+let columns = []
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -19,12 +19,42 @@ console.log(names)
 </head>
 
 <body>
-	<div class="content h-screen w-full">
-		{names.map(e => e[0]).map(element => (
-		<>
-			<p> {element} </p>
-		</>
-		))}
+	<div class="text-2xl content mb-16 w-full">
+        <div class='text-center justify-center text-4xl md:text-6xl lg:text-7xl flex flex-col our-sponsors h-32 w-full'>
+          Individual Donors
+        </div>
+		<div class="hidden md:flex flex-row h-full w-full">
+		{Array.from(Array(3)).map((e,i) => 
+			i != 2 ?
+			(<div class='flex-1 flex flex-col text-center'>
+			{names.slice(Math.floor(names.length/3)*i,Math.floor(names.length/3)*(i+1)).map(e => (
+				<p> {e[0]} </p>
+			))}
+			</div>)
+			:
+			(<div class='flex-1 flex flex-col text-center'>
+			{names.slice(Math.floor(names.length/3)*i,names.length).map(e => (
+				<p> {e[0]} </p>
+			))}
+			</div>)
+		)}
+		</div>
+		<div class="text-xl flex md:hidden flex-row w-full">
+		{Array.from(Array(2)).map((e,i) => 
+			i == 0 ?
+			(<div class='flex-1 flex flex-col h-full text-center'>
+			{names.slice(0,Math.ceil(names.length/2)).map(e => (
+				<p> {e[0]} </p>
+			))}
+			</div>)
+			:
+			(<div class='flex-1 flex flex-col text-center'>
+			{names.slice(Math.floor(names.length/2)*i,Math.floor(names.length/2)*(i+1)+1).map(e => (
+				<p> {e[0]} </p>
+			))}
+			</div>)
+		)}
+		</div>
 	</div>
 </body>
 

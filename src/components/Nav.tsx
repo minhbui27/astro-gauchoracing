@@ -17,7 +17,7 @@ const MobileMenuButton = (): JSX.Element => {
           setMenuOpen(!menuOpen)
         }}
         type='button'
-        className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
+        className='inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
       >
         <span className='sr-only'>Open main menu</span>
         {/* <!-- */}
@@ -30,7 +30,7 @@ const MobileMenuButton = (): JSX.Element => {
         <svg
           className={(menuOpen ? 'block' : 'hidden') + ' h-6 w-6'}
           xmlns='http://www.w3.org/2000/svg'
-          fill='none'
+          fill='white'
           viewBox='0 0 24 24'
           strokeWidth='2'
           stroke='currentColor'
@@ -50,7 +50,7 @@ const MobileMenuButton = (): JSX.Element => {
         <svg
           className={(menuOpen ? 'hidden' : 'block') + ' h-6 w-6'}
           xmlns='http://www.w3.org/2000/svg'
-          fill='none'
+          fill='white'
           viewBox='0 0 24 24'
           strokeWidth='2'
           stroke='currentColor'
@@ -88,7 +88,7 @@ const DesktopMenu = (): JSX.Element => {
       <div className='flex-1 flex items-center justify-center sm:items-stretch sm:justify-start'>
         <div className='flex-shrink-0 flex items-center'></div>
         <div className='hidden sm:block sm:ml-6 py-2'>
-          <div className='flex space-x-4'>
+          <div className='text-white flex space-x-4'>
             {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
             <a
               href='/'
@@ -171,17 +171,18 @@ const MobileMenu = (): JSX.Element => {
   const { curPage, menuOpen } = useContext(ContextContainer)
   const containerControls = useAnimationControls()
   const container = {
-    hidden: { x: -500 },
+    hidden: { x: -750 },
     show: {
       x: 0,
       transition: {
         ease: 'easeIn',
+		duration: 0.25,
         staggerChildren: 0.2,
-		staggerDirection: 1,
+        staggerDirection: 1,
       },
     },
     hide: {
-      x: -500,
+      x: -750,
       transition: {
         ease: 'easeOut',
       },
@@ -189,7 +190,7 @@ const MobileMenu = (): JSX.Element => {
   }
   const anchorAnimation = {
     hidden: { opacity: 0, x: -300 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.2, ease: 'linear' } },
+    show: { opacity: 1, x: 0, transition: { duration: 0.25, ease: 'linear' } },
     hide: {
       opacity: 0,
       x: -300,
