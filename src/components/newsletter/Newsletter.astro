@@ -9,7 +9,12 @@ async function getData() {
 		console.log(error)
 	}
 }
-getData().then(x => console.log(x))
+const data = await getData()
+let contents = []
+data.data.body.content.splice(1).forEach(e => {
+	const temp = e.paragraph.elements[0];
+	if (temp.textRun !== undefined && temp.textRun.content !== undefined) contents.push(temp.textRun.content);
+})
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +27,8 @@ getData().then(x => console.log(x))
 </head>
 
 <body>
-	<div class="h-screen w-full">
+	<div class="overflow-auto pt-16 min-h-screen w-full">
+		{contents.map(e => <p>{e}</p>)}
 	</div>
 </body>
 

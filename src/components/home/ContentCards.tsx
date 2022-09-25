@@ -15,7 +15,7 @@ export default function ContentCards(): JSX.Element {
           <div className='flex flex-row justify-center pt-4 text-white text-4xl'>
             Newsletter
           </div>
-          <div className='overflow-y-scroll w-full h-full md:h-3/5 flex flex-col justify-start'>
+          <div className='overflow-y-auto w-full h-full md:h-3/5 flex flex-col justify-start'>
             <div className='text-xl text-white w-full flex flex-row'>
               <div className='px-8 py-8 h-full'>
                 <p className='w-full h-full'>
@@ -41,7 +41,7 @@ export default function ContentCards(): JSX.Element {
           <div className='flex flex-row justify-center pt-4 text-white text-4xl'>
             Our team
           </div>
-          <div className='overflow-y-scroll w-full h-full md:h-3/5 flex flex-col justify-start'>
+          <div className='overflow-y-auto w-full h-full md:h-3/5 flex flex-col justify-start'>
             <div className='text-xl text-white w-full flex flex-row'>
               <div className='px-8 py-8 h-full'>
                 <p className='w-full h-full'>
@@ -68,7 +68,7 @@ export default function ContentCards(): JSX.Element {
           <div className='flex flex-row justify-center pt-4 text-white text-4xl'>
             Sponsorships
           </div>
-          <div className='overflow-y-scroll w-full h-full md:h-3/5 flex flex-col justify-start'>
+          <div className='overflow-y-auto w-full h-full md:h-3/5 flex flex-col justify-start'>
             <div className='text-xl text-white w-full flex flex-row'>
               <div className='px-8 py-8 h-full'>
                 <p className='w-full h-full'>
