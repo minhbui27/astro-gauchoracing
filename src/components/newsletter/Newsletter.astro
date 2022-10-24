@@ -1,5 +1,5 @@
 ---
-import { getServerSideProps } from './NewsletterDocs'
+import { getServerSideProps, getNewsletters } from './NewsletterDocs'
 async function getData() {
 	try {
 		const response = getServerSideProps()
@@ -9,9 +9,13 @@ async function getData() {
 		console.log(error)
 	}
 }
+const newsletters = await getNewsletters([2,100])
+console.log(newsletters.data.values)
 const data = await getData()
 let contents = []
-data.data.body.content.splice(1).forEach(e => {
+// console.log(data.data.title)
+const title = data.data.title
+data.data.body.content.splice(2).forEach(e => {
 	const temp = e.paragraph.elements[0];
 	if (temp.textRun !== undefined && temp.textRun.content !== undefined) contents.push(temp.textRun.content);
 })
@@ -27,7 +31,10 @@ data.data.body.content.splice(1).forEach(e => {
 </head>
 
 <body>
-	<div class="overflow-auto pt-16 min-h-screen w-full">
+	<div class="px-48 overflow-auto pt-16 min-h-screen w-full">
+		<div class="py-8 text-center lg:text-5xl title">
+			{title}
+		</div>
 		{contents.map(e => <p>{e}</p>)}
 	</div>
 </body>
