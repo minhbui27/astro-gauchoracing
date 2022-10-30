@@ -9,12 +9,24 @@ const Sponsors = (): JSX.Element => {
     <div className='pt-16 w-full bg-sponsors'>
       <div className='w-full h-full flex flex-col'>
         <div className='text-center justify-center text-4xl md:text-6xl lg:text-7xl flex flex-col our-sponsors h-32 w-full'>
-          Our Sponsors
+         Platinum Sponsors 
         </div>
         <div className='px-4 md:px-20 lg:px-32 w-full'>
           <img src={autodesk} alt='autodesk' />
         </div>
-        <div className='md:h-64 mt-8 md:mt-16 px-8 flex flex-col md:flex-row md:px-16 lg:px-24 w-full'>
+        <div className='text-center justify-center text-4xl md:text-6xl lg:text-7xl flex flex-col our-sponsors h-32 w-full'>
+         Gold Sponsors 
+        </div>
+        <div className='text-center justify-center text-4xl md:text-6xl lg:text-7xl flex flex-col our-sponsors h-32 w-full'>
+         Silver Sponsors 
+        </div>
+        <div className='text-center justify-center text-4xl md:text-6xl lg:text-7xl flex flex-col our-sponsors h-32 w-full'>
+         Bronze Sponsors 
+        </div>
+        <div className='text-center justify-center text-4xl md:text-6xl lg:text-7xl flex flex-col our-sponsors h-32 w-full'>
+         Software Sponsors 
+        </div>
+        <div className='md:h-64 mt-8 px-8 flex flex-col md:flex-row md:px-16 lg:px-24 w-full'>
           <div className='flex flex-row justify-center flex-1'>
             <img
               src={chassissim}

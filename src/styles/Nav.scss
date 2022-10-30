@@ -15,8 +15,12 @@ $lightblue: rgb(56,164,208);
 $darkgreen: #12574A;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+//the hover bg should be the lightpink color
+.bg-hover {
+	background-color: #F10093;
+}
 .item-selected-bg {
-  background-color: $aquaweb;
+  background-color: #CE00D7;
   color: $babypowder;
 }
 .text-items {
@@ -27,5 +31,5 @@ $darkgreen: #12574A;
   color: white;
 }
 .navbarColor {
-  background-color: $lightblue; 
+  background-color: #730F7A; 
 }

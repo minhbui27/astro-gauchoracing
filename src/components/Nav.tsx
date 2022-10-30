@@ -95,7 +95,7 @@ const DesktopMenu = (): JSX.Element => {
               className={
                 (curPage === 'Home'
                   ? 'item-selected-bg'
-                  : 'hover:bg-gray-900 text-items') +
+                  : 'hover:bg-hover text-items') +
                 ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
               }
               aria-current='page'
