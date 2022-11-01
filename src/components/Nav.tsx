@@ -17,7 +17,7 @@ const MobileMenuButton = (): JSX.Element => {
           setMenuOpen(!menuOpen)
         }}
         type='button'
-        className='inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
+        className='inline-flex items-center justify-center p-2 rounded-md text-white bg-lightpink hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
       >
         <span className='sr-only'>Open main menu</span>
         {/* <!-- */}
@@ -95,7 +95,7 @@ const DesktopMenu = (): JSX.Element => {
               className={
                 (curPage === 'Home'
                   ? 'item-selected-bg'
-                  : 'hover:bg-hover text-items') +
+                  : 'hover:bg-lightpink text-items') +
                 ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
               }
               aria-current='page'
@@ -108,7 +108,7 @@ const DesktopMenu = (): JSX.Element => {
               className={
                 (curPage === 'About'
                   ? 'item-selected-bg'
-                  : 'hover:bg-gray-900 text-items') +
+                  : 'hover:bg-lightpink text-items') +
                 ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
               }
             >
@@ -120,7 +120,7 @@ const DesktopMenu = (): JSX.Element => {
               className={
                 (curPage === 'FSAE'
                   ? 'item-selected-bg'
-                  : 'hover:bg-gray-900 text-items') +
+                  : 'hover:bg-lightpink text-items') +
                 ' hidden md:block px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
               }
             >
@@ -132,7 +132,7 @@ const DesktopMenu = (): JSX.Element => {
               className={
                 (curPage === 'FSAE'
                   ? 'item-selected-bg'
-                  : 'hover:bg-gray-900 text-items') +
+                  : 'hover:bg-lightpink text-items') +
                 ' hidden sm:block md:hidden px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
               }
             >
@@ -144,7 +144,7 @@ const DesktopMenu = (): JSX.Element => {
               className={
                 (curPage === 'Sponsors'
                   ? 'item-selected-bg'
-                  : 'hover:bg-gray-900 text-items') +
+                  : 'hover:bg-lightpink text-items') +
                 ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
               }
             >
@@ -155,7 +155,7 @@ const DesktopMenu = (): JSX.Element => {
               className={
                 (curPage === 'Newsletter'
                   ? 'item-selected-bg'
-                  : 'hover:bg-gray-900 text-items') +
+                  : 'hover:bg-lightpink text-items') +
                 ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
               }
             >
@@ -217,7 +217,7 @@ const MobileMenu = (): JSX.Element => {
             href='/'
             className={
               (curPage === 'Home'
-                ? 'bg-gray-900 text-items'
+                ? 'bg-lightpink text-items'
                 : 'text-gray-300') +
               ' block px-3 py-2 rounded-md text-base font-medium'
             }
@@ -231,7 +231,7 @@ const MobileMenu = (): JSX.Element => {
             href='/about'
             className={
               (curPage === 'About'
-                ? 'bg-gray-900 text-items'
+                ? 'bg-lightpink text-items'
                 : 'text-gray-300') +
               ' block px-3 py-2 rounded-md text-base font-medium'
             }
@@ -244,7 +244,7 @@ const MobileMenu = (): JSX.Element => {
             href='/fsae'
             className={
               (curPage === 'FSAE'
-                ? 'bg-gray-900 text-items'
+                ? 'bg-lightpink text-items'
                 : 'text-gray-300') +
               ' block px-3 py-2 rounded-md text-base font-medium'
             }
@@ -256,7 +256,7 @@ const MobileMenu = (): JSX.Element => {
             href='/sponsors'
             className={
               (curPage === 'Sponsors'
-                ? 'bg-gray-900 text-items'
+                ? 'bg-lightpink text-items'
                 : 'text-gray-300') +
               ' block px-3 py-2 rounded-md text-base font-medium'
             }
@@ -268,7 +268,7 @@ const MobileMenu = (): JSX.Element => {
             href='/newsletter'
             className={
               (curPage === 'Newsletter'
-                ? 'bg-gray-900 text-items'
+                ? 'bg-lightpink text-items'
                 : 'text-gray-300') +
               ' block px-3 py-2 rounded-md text-base font-medium'
             }
