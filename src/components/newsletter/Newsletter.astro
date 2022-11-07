@@ -1,24 +1,26 @@
 ---
-import { getServerSideProps, getNewsletters } from './NewsletterDocs'
-async function getData() {
-	try {
-		const response = getServerSideProps()
-		const data = response
-		return data
-	} catch (error) {
-		console.log(error)
-	}
-}
-const newsletters = await getNewsletters([2,100])
-console.log(newsletters.data.values)
-const data = await getData()
-let contents = []
-// console.log(data.data.title)
-const title = data.data.title
-data.data.body.content.splice(2).forEach(e => {
-	const temp = e.paragraph.elements[0];
-	if (temp.textRun !== undefined && temp.textRun.content !== undefined) contents.push(temp.textRun.content);
-})
+/* currently not using these async calls, commented out to save possible lag */
+
+/* import { getServerSideProps, getNewsletters } from './NewsletterDocs' */
+/* async function getData() { */
+/* 	try { */
+/* 		const response = getServerSideProps() */
+/* 		const data = response */
+/* 		return data */
+/* 	} catch (error) { */
+/* 		console.log(error) */
+/* 	} */
+/* } */
+/* const newsletters = await getNewsletters([2,100]) */
+/* console.log(newsletters.data.values) */
+/* const data = await getData() */
+/* let contents = [] */
+/* // console.log(data.data.title) */
+/* const title = data.data.title */
+/* data.data.body.content.splice(2).forEach(e => { */
+/* 	const temp = e.paragraph.elements[0]; */
+/* 	if (temp.textRun !== undefined && temp.textRun.content !== undefined) contents.push(temp.textRun.content); */
+/* }) */
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -31,12 +33,12 @@ data.data.body.content.splice(2).forEach(e => {
 </head>
 
 <body>
-	<div class="px-48 overflow-auto pt-16 min-h-screen w-full">
-		<div class="py-8 text-center lg:text-5xl title">
-			{title}
-		</div>
-		{contents.map(e => <p>{e}</p>)}
-	</div>
+	<!-- <div class="px-48 overflow-auto pt-16 min-h-screen w-full"> -->
+	<!-- 	<div class="py-8 text-center lg:text-5xl title"> -->
+	<!-- 		{title} -->
+	<!-- 	</div> -->
+	<!-- 	{contents.map(e => <p>{e}</p>)} -->
+	<!-- </div> -->
 </body>
 
 </html>
