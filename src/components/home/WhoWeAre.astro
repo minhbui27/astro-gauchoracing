@@ -1,53 +1,81 @@
 ---
-import '../../styles/Home.scss'
-import ScrollingImages from './HomeHelpers'
-import { SideLines } from './HomeHelpers'
+import "../../styles/Home.scss";
+import ScrollingImages from "./HomeHelpers";
+import { SideLines } from "./HomeHelpers";
 ---
+
 <!DOCTYPE html>
 <html lang="en">
-
-<body>
-	<div class="flex bg-whoweare">
-		<div
-			class="z-10 wwa-container flex flex-col shrink-0 w-full border-solid border-2 md:w-1/2 lg:w-2/5 justify-start">
-			<div class="flex flex-col h-[2.6rem] justify-start">
-				<div class="line-navy h-2/5 w-full"></div>
-				<div class="line-gold h-2/5 w-full"></div>
-				<SideLines repeat={30} client:visible />
-			</div>
-			<div class="flex bg-asphalt flex-row">
-				<div class="flex flex-col space-y-2 py-2 flex-none w-1/12 big-text justify-center">
-					<div class="line-white"></div>
+	<body>
+		<div class="flex bg-whoweare">
+			<div
+				class="z-10 wwa-container flex flex-col shrink-0 w-full border-solid border-2 md:w-1/2 lg:w-2/5 justify-start"
+			>
+				<div class="flex flex-col h-[2.6rem] justify-start">
+					<div class="line-navy h-2/5 w-full"></div>
+					<div class="line-gold h-2/5 w-full"></div>
+					<SideLines repeat={30} client:visible />
 				</div>
-				<div class="shrink-0 w-auto mx-2 big-text justify-center">Who We Are</div>
-				<div class="flex flex-row py-2 flex-1 items-center">
-					<div class="line-white w-full"></div>
+				<div class="flex bg-asphalt flex-row">
+					<div
+						class="flex flex-col space-y-2 py-2 flex-none w-1/12 big-text justify-center"
+					>
+						<div class="line-white"></div>
+					</div>
+					<div class="shrink-0 w-auto mx-2 big-text justify-center">
+						Who We Are
+					</div>
+					<div class="flex flex-row py-2 flex-1 items-center">
+						<div class="line-white w-full"></div>
+					</div>
 				</div>
-			</div>
-			<div class="flex flex-col h-[2.6rem] justify-end">
-				<SideLines repeat={30} client:visible />
-				<div class="line-gold h-2/5 w-full"></div>
-				<div class="line-navy h-2/5 w-full"></div>
-			</div>
-			<div class="flex flex-col bg-textbox flex-1 overflow-y-auto justify-center">
+				<div class="flex flex-col h-[2.6rem] justify-end">
+					<SideLines repeat={30} client:visible />
+					<div class="line-gold h-2/5 w-full"></div>
+					<div class="line-navy h-2/5 w-full"></div>
+				</div>
 				<div
-					class="pt-8 flex flex-col flex-1 mx-auto info-text w-4/5 h-full content-center text-center text-xl lg:text-2xl">
-					Gaucho Racing is a team of passionate and talented students preparing for their professional careers through ambitious engineering projects and competitions. Our main focus is Formula SAE Electric, a competition for which we have to design, manufacture, and fund a single seater electric race car from scratch. Gaucho Racing is part of UCSB’s official SAE International Student Chapter and uses this connection to connect students with industry professionals, build relationships and perform educational outreach.
+					class="flex flex-col bg-textbox flex-1 overflow-y-auto justify-center"
+				>
+					<div
+						class="pt-8 flex flex-col flex-1 mx-auto info-text w-4/5 h-full content-center text-center text-xl lg:text-2xl"
+					>
+						Gaucho Racing is a team of passionate and talented
+						students preparing for their professional careers
+						through ambitious engineering projects and competitions.
+						Our main focus is Formula SAE Electric, a competition
+						for which we have to design, manufacture, and fund a
+						single seater electric race car from scratch. Gaucho
+						Racing is part of UCSB’s official SAE International
+						Student Chapter and uses this connection to connect
+						students with industry professionals, build
+						relationships and perform educational outreach.
+					</div>
 				</div>
 			</div>
+			<div class="hidden md:block md:w-1/2 lg:w-3/5 flex-1 shrink">
+				<ScrollingImages
+					client:load
+					direction={1}
+					duration={8}
+					images={["img1", "img2", "img1", "img2", "img1", "img2"]}
+				/>
+				<ScrollingImages
+					client:load
+					direction={0}
+					duration={8}
+					images={["img1", "img2", "img1", "img2", "img1", "img2"]}
+				/>
+				<ScrollingImages
+					client:load
+					direction={1}
+					duration={8}
+					images={["img1", "img2", "img1", "img2", "img1", "img2"]}
+				/>
+			</div>
 		</div>
-		<div class="hidden md:block md:w-1/2 lg:w-3/5 flex-1 shrink">
-			<ScrollingImages client:load direction={1} duration={8}
-				images={["img1","img2","img1","img2","img1","img2"]} />
-			<ScrollingImages client:load direction={0} duration={8}
-				images={["img1","img2","img1","img2","img1","img2"]} />
-			<ScrollingImages client:load direction={1} duration={8}
-				images={["img1","img2","img1","img2","img1","img2"]} />
-		</div>
-	</div>
-</body>
-<style>
-	@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
-</style>
-
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap");
+		</style>
+	</body>
 </html>

@@ -151,15 +151,15 @@ const DesktopMenu = (): JSX.Element => {
               Sponsors
             </a>
             <a
-              href='/newsletter'
+              href='/donate'
               className={
-                (curPage === 'Newsletter'
+                (curPage === 'Donate'
                   ? 'item-selected-bg'
                   : 'hover:bg-lightpink text-items') +
                 ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
               }
             >
-              Newsletter
+              Donate
             </a>
           </div>
         </div>
@@ -176,7 +176,7 @@ const MobileMenu = (): JSX.Element => {
       x: 0,
       transition: {
         ease: 'easeIn',
-		duration: 0.25,
+        duration: 0.25,
         staggerChildren: 0.2,
         staggerDirection: 1,
       },
@@ -265,15 +265,15 @@ const MobileMenu = (): JSX.Element => {
           </motion.a>
           <motion.a
             variants={anchorAnimation}
-            href='/newsletter'
+            href='/donate'
             className={
-              (curPage === 'Newsletter'
+              (curPage === 'Donate'
                 ? 'bg-lightpink text-items'
                 : 'text-gray-300') +
               ' block px-3 py-2 rounded-md text-base font-medium'
             }
           >
-            Newsletter
+            Donate
           </motion.a>
         </motion.div>
       </motion.div>
