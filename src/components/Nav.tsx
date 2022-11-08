@@ -287,10 +287,13 @@ export default function Nav(props: NavProps): JSX.Element {
   return (
     <nav>
       <ContextContainer.Provider value={{ curPage, menuOpen, setMenuOpen }}>
-        <div className='navbarColor max-w-8xl px-2 sm:px-4 lg:px-6'>
-          <div className='relative flex items-center justify-between h-16'>
-            <MobileMenuButton />
-            <DesktopMenu />
+	  {/* Centering the navbar and adding rounded edges */}
+        <div className='flex flex-row justify-center'>
+          <div className='navbarColor w-full md:w-4/5 px-2 sm:px-4 lg:px-6 md:my-2 md:rounded-2xl'>
+            <div className='relative flex items-center justify-between h-16'>
+              <MobileMenuButton />
+              <DesktopMenu />
+            </div>
           </div>
         </div>
         {/* <!-- Mobile menu, show/hide based on menu state. --> */}

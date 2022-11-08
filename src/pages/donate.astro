@@ -9,7 +9,7 @@ import "../styles/Donate.scss"
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/logo-new.png" />
 		<title>Donate!</title>
 	</head>
 	<body>
@@ -19,14 +19,14 @@ import "../styles/Donate.scss"
 			</div>
 			<div class="w-full h-screen bg-navy flex flex-col justify-center">
 				<!-- this is the container of the donate text and the donate button -->
-				<div class="w-full h-2/5 flex flex-row justify-center">
+				<div class="w-full min-h-2/5 flex flex-row justify-center">
 				<!-- the content in each box is centered using css grid -->
 					<div
 						class="bg-donatebox text-white rounded-2xl w-full md:w-1/3 h-full grid place-content-center"
 					>
 						<div class="mx-4 grid place-content-center">
-							<h1 class="my-2 text-xl md:text-2xl">Donate!</h1>
-							<p class="text-md md:text-lg">
+							<h1 class="my-2 text-md md:text-xl lg:text-2xl"> Donate! </h1>
+							<p class="text-md md:text-md lg:text-lg">
 								All donations are greatly appreciated and will
 								be used to directly fund our Gaucho Racing
 								Project. Whether it is fueling us with pizza or
@@ -35,8 +35,8 @@ import "../styles/Donate.scss"
 								donor wall on the Our Sponsors page.
 							</p>
 						</div>
-						<div class="my-8 grid place-content-center">
-							<a href={"https://www.paypal.com/donate/?business=ZN34YGJKW3AC4&no_recurring=0&item_name=All+donations+are+greatly+appreciated+and+will+be+used+to+directly+fund+our+Gaucho+Racing+Project.+&currency_code=USD"} class="cursor-pointer bg-cyan rounded-md p-4">Click Here To Donate</a>
+						<div class="md:my-4 lg:my-8 grid place-content-center">
+							<a href={"https://www.paypal.com/donate/?business=ZN34YGJKW3AC4&no_recurring=0&item_name=All+donations+are+greatly+appreciated+and+will+be+used+to+directly+fund+our+Gaucho+Racing+Project.+&currency_code=USD"} class="cursor-pointer bg-cyan rounded-md p-4 md:p-2 lg:p-4">Click Here To Donate</a>
 						</div>
 					</div>
 				</div>
