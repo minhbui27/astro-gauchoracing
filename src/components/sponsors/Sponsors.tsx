@@ -11,6 +11,7 @@ import ansys from '/sponsors_images/ansys_logo.png'
 import tesla from '/sponsors_images/tesla_logo.png'
 import milpasmotors from '/sponsors_images/milpas_logo.png'
 import nativelab from '/sponsors_images/nativelab_logo.png'
+import vi_grade from '/sponsors_images/vi-grade_red_logo.png'
 const Sponsors = (): JSX.Element => {
   return (
     <div className='pt-16 w-full bg-sponsors'>
@@ -67,7 +68,12 @@ const Sponsors = (): JSX.Element => {
             <img src={ansys} className='object-contain' alt='ansys' />
           </div>
         </div>
-      </div>
+        <div className='md:h-48 px-8 flex flex-col md:flex-row md:px-16 lg:px-24 w-full'>
+          <div className='flex flex-row justify-center flex-1'>
+            <img src={vi_grade} className='object-contain' alt='vi-grade' />
+          </div>
+          </div>
+        </div>
     </div>
   )
 }
