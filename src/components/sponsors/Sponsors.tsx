@@ -21,11 +21,7 @@ const Sponsors = (): JSX.Element => {
         </div>
         <div className='md:h-48 px-8 flex flex-col md:flex-row md:px-16 lg:px-24 w-full'>
           <div className='flex flex-row justify-center flex-1'>
-            <img
-              src={autodesk}
-              className='object-contain'
-              alt='chassis sim'
-            />
+            <img src={autodesk} className='object-contain' alt='chassis sim' />
           </div>
           <div className='flex flex-row justify-center flex-1'>
             <img src={tesla} className='object-contain' alt='solidworks' />
@@ -70,10 +66,16 @@ const Sponsors = (): JSX.Element => {
         </div>
         <div className='md:h-48 px-8 flex flex-col md:flex-row md:px-16 lg:px-24 w-full'>
           <div className='flex flex-row justify-center flex-1'>
-            <img src={vi_grade} className='object-contain' alt='vi-grade' />
-          </div>
+            <a href='https://www2.news.vi-grade.com/e/832623/2022-11-09/24trtt/436609038?h=nfhr6jCYOA4bfgdveSLQnsc6RY4tWNSiFz6E204pYgc'>
+              <img
+                src={vi_grade}
+                className='object-contain'
+                alt='vi-grade'
+              />
+            </a>
           </div>
         </div>
+      </div>
     </div>
   )
 }
