@@ -69,7 +69,7 @@ const Sponsors = (): JSX.Element => {
             <a href='https://www2.news.vi-grade.com/e/832623/2022-11-09/24trtt/436609038?h=nfhr6jCYOA4bfgdveSLQnsc6RY4tWNSiFz6E204pYgc'>
               <img
                 src={vi_grade}
-                className='object-contain'
+                className='h-full w-full'
                 alt='vi-grade'
               />
             </a>
