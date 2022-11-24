@@ -54,23 +54,25 @@ import { SideLines } from "./HomeHelpers";
 				</div>
 			</div>
 			<div class="hidden md:block md:w-1/2 lg:w-3/5 flex-1 shrink">
+			<!-- There must be twice the amount of images that we want to be in the scrolling card at once, in this case 3, so we need 6 -->
+			<!-- images in 3's repeated twice to create the infinite scrolling effect -->
 				<ScrollingImages
 					client:load
 					direction={1}
 					duration={8}
-					images={["img1", "img2", "img1", "img2", "img1", "img2"]}
+					images={["img1", "img2", "img3","img1", "img2", "img3"]}
 				/>
 				<ScrollingImages
 					client:load
 					direction={0}
 					duration={8}
-					images={["img1", "img2", "img1", "img2", "img1", "img2"]}
+					images={["img4", "img5", "img6", "img4", "img5", "img6"]}
 				/>
 				<ScrollingImages
 					client:load
 					direction={1}
 					duration={8}
-					images={["img1", "img2", "img1", "img2", "img1", "img2"]}
+					images={["img7", "img8", "img9", "img7", "img8", "img9"]}
 				/>
 			</div>
 		</div>
