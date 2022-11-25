@@ -1,5 +1,7 @@
 import * as React from 'react'
-import img1 from '/home_images/img1.jpg'
+import ourteam from '/home_images/ourteam.jpg'
+import sponsorships from '/home_images/sponsorships.jpg'
+import newsletter from '/home_images/newsletter.jpg'
 export default function ContentCards(): JSX.Element {
   return (
     <div className='bg-about-boxes py-4 px-4 lg:px-32 justify-between w-full min-h-[45rem] md:h-[50rem] flex flex-col md:flex-row'>
@@ -8,7 +10,7 @@ export default function ContentCards(): JSX.Element {
           <div className='rounded-3xl w-full h-64'>
             <img
               className='rounded-3xl object-cover w-full h-full'
-              src={img1}
+              src={newsletter}
               alt=''
             />
           </div>
@@ -34,7 +36,7 @@ export default function ContentCards(): JSX.Element {
           <div className='rounded-3xl w-full h-64'>
             <img
               className='rounded-3xl object-cover w-full h-full'
-              src={img1}
+              src={ourteam}
               alt=''
             />
           </div>
@@ -61,7 +63,7 @@ export default function ContentCards(): JSX.Element {
           <div className='rounded-3xl w-full h-64'>
             <img
               className='rounded-3xl object-cover w-full h-full'
-              src={img1}
+              src={sponsorships}
               alt=''
             />
           </div>
