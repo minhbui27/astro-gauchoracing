@@ -12,32 +12,33 @@ import tesla from '/sponsors_images/tesla_logo.png'
 import milpasmotors from '/sponsors_images/milpas_logo.png'
 import nativelab from '/sponsors_images/nativelab_logo.png'
 import haas from '/sponsors_images/haas_logo.png'
+import vi_grade from '/sponsors_images/vi-grade_red_logo.png'
 const Sponsors = (): JSX.Element => {
   return (
     <div className='pt-16 w-full bg-sponsors'>
 
-			// Platinum sponsors
+      {/* Platinum sponsors */}
       <div className='w-full h-full flex flex-col'>
         <div className='text-center justify-center text-4xl md:text-6xl lg:text-7xl flex flex-col our-sponsors h-32 w-full'>
           Platinum Sponsors
         </div>
         <div className='md:h-48 px-8 flex flex-col md:flex-row md:px-16 lg:px-24 w-full'>
           <div className='flex flex-row justify-center flex-1'>
-            <img
-              src={autodesk}
-              className='object-contain'
-              alt='chassis sim'
-            />
+            <img src={autodesk} className='object-contain' alt='chassis sim' />
           </div>
           <div className='flex flex-row justify-center flex-1'>
             <img src={tesla} className='object-contain' alt='tesla' />
           </div>
           <div className='flex flex-row justify-center flex-1'>
-            <img src={haas} className='object-contain' alt='Gene Haas Foundation' />
+            <img
+              src={haas}
+              className='object-contain'
+              alt='Gene Haas Foundation'
+            />
           </div>
         </div>
 
-				// Gold Sponsors
+        {/* Gold sponsors */}
         <div className='text-center justify-center text-4xl md:text-6xl lg:text-7xl flex flex-col our-sponsors h-32 w-full'>
           Gold Sponsors
         </div>
@@ -47,12 +48,12 @@ const Sponsors = (): JSX.Element => {
           </div>
         </div>
 
-				// Silver Sponsors
+        {/* Silver sponsors */}
         <div className='text-center justify-center text-4xl md:text-6xl lg:text-7xl flex flex-col our-sponsors h-32 w-full'>
           Silver Sponsors
         </div>
 
-				// Bronze Sponsors
+        {/* Bronze sponsors */}
         <div className='text-center justify-center text-4xl md:text-6xl lg:text-7xl flex flex-col our-sponsors h-32 w-full'>
           Bronze Sponsors
         </div>
@@ -62,7 +63,7 @@ const Sponsors = (): JSX.Element => {
           </div>
         </div>
 
-				// Software Sponsors
+        {/* Software sponsors */}
         <div className='text-center justify-center text-4xl md:text-6xl lg:text-7xl flex flex-col our-sponsors h-32 w-full'>
           Software Sponsors
         </div>
@@ -79,6 +80,13 @@ const Sponsors = (): JSX.Element => {
           </div>
           <div className='flex flex-row justify-center flex-1'>
             <img src={ansys} className='object-contain' alt='ansys' />
+          </div>
+        </div>
+        <div className='md:h-48 px-8 flex flex-col md:flex-row md:px-16 lg:px-24 w-full'>
+          <div className='flex flex-row justify-center flex-1'>
+            <a href='https://www2.news.vi-grade.com/e/832623/2022-11-09/24trtt/436609038?h=nfhr6jCYOA4bfgdveSLQnsc6RY4tWNSiFz6E204pYgc'>
+              <img src={vi_grade} className='h-full w-full' alt='vi-grade' />
+            </a>
           </div>
         </div>
       </div>

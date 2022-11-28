@@ -4,8 +4,8 @@
 /* Note that as of 11/1/2022, this file is of .jsx extension because the react-three-fiber ecosystem does */
 /* not integrate well with typescript. */
 import * as React from 'react'
-import { Suspense, useRef, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
+import { Suspense } from 'react'
 import { OrbitControls, Html, Preload } from '@react-three/drei'
 import { ArrowheadDown } from '@styled-icons/evaicons-solid/ArrowheadDown'
 import * as THREE from 'three'
