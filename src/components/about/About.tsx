@@ -3,6 +3,7 @@ import '../../styles/about.scss'
 import img1 from '/about_images/img1.jpg'
 import img2 from '/about_images/img2.jpg'
 import img3 from '/about_images/img3.jpg'
+import our_officers from '/our_officers.jpg'
 export default function About(): JSX.Element {
   return (
     <div className='w-full min-h-screen bg-about'>
@@ -73,9 +74,9 @@ export default function About(): JSX.Element {
             Our Officers
           </div>
           <div className='text-officers-info text-xl md:text-3xl mx-4 md:mx-16 my-8 flex flex-row justify-center'>
-            From Left to Right: Torin Schlunk (Secretary). Cesar Castillo (Vice
-            President), Nicholas Rivelle (President), Andrew Peng (Treasurer)
+            From Left to Right: Andrew Peng (Treasurer), Torin Schlunk (Secretary), Cesar Castillo (Chief Engineer), Nicholas Rivelle (President), Tien Nguyen (Controls Co-Lead), Raaghav Thirumaligai (Event Coordinator) 
           </div>
+					<img className='object-scale-down h-2/3 w-full' src={our_officers}/>
         </div>
       </div>
     </div>

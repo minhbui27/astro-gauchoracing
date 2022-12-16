@@ -1,11 +1,26 @@
 ---
-import { getServerSideProps } from "./SponsorSheets"
-async function getData() {
-	const response = await getServerSideProps([2, 100]);
-	const data = response.data.values;
-	return data
+// import { getServerSideProps } from "./SponsorSheets"
+import { promises as fsPromises } from 'fs'
+async function readFile(filename: string) {
+	try {
+		const contents = await fsPromises.readFile(filename, 'utf-8');
+		
+		const arr = contents.split(/\r?\n/);
+		return arr;
+	} catch(err) {
+		console.log(err);
+	}
 }
-const names = await getData();
+const names = await readFile('./public/sponsor_names.txt')
+console.log(names)
+
+// Google Cloud Console trial ended. If need this feature that pulls from google sheets then go renew this.
+// async function getData() {
+// 	const response = await getServerSideProps([2, 100]);
+// 	const data = response.data.values;
+// 	return data
+// }
+// const names = await getData();
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -27,13 +42,13 @@ const names = await getData();
 			i != 2 ?
 			(<div class='flex-1 flex flex-col text-center'>
 			{names.slice(Math.floor(names.length/3)*i,Math.floor(names.length/3)*(i+1)).map(e => (
-				<p> {e[0]} </p>
+				<p> {e} </p>
 			))}
 			</div>)
 			:
 			(<div class='flex-1 flex flex-col text-center'>
 			{names.slice(Math.floor(names.length/3)*i,names.length).map(e => (
-				<p> {e[0]} </p>
+				<p> {e} </p>
 			))}
 			</div>)
 		)}
@@ -43,13 +58,13 @@ const names = await getData();
 			i == 0 ?
 			(<div class='flex-1 flex flex-col h-full text-center'>
 			{names.slice(0,Math.ceil(names.length/2)).map(e => (
-				<p> {e[0]} </p>
+				<p> {e} </p>
 			))}
 			</div>)
 			:
 			(<div class='flex-1 flex flex-col text-center'>
 			{names.slice(Math.floor(names.length/2)*i,Math.floor(names.length/2)*(i+1)+1).map(e => (
-				<p> {e[0]} </p>
+				<p> {e} </p>
 			))}
 			</div>)
 		)}
