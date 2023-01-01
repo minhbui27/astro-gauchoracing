@@ -2,6 +2,7 @@ import * as React from 'react'
 import ourteam from '/home_images/ourteam.jpg'
 import sponsorships from '/home_images/sponsorships.jpg'
 import newsletter from '/home_images/newsletter.jpg'
+import '../../styles/Home.scss'
 export default function ContentCards(): JSX.Element {
   return (
     <div className='bg-about-boxes py-4 px-4 lg:px-32 justify-between w-full min-h-[45rem] md:h-[50rem] flex flex-col md:flex-row'>
@@ -29,6 +30,7 @@ export default function ContentCards(): JSX.Element {
               </div>
             </div>
           </div>
+						<div className="self-center box-signup my-8 p-2"><a href='https://forms.gle/mAoygCjFCafnCUuW8'>Click here to sign up!</a></div>
         </div>
       </div>
       <div className='rounded-3xl px-8 md:px-2 lg:px-8 py-8 h-full w-full md:w-1/3'>
