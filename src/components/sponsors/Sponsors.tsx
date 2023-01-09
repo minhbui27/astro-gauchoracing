@@ -13,6 +13,7 @@ import milpasmotors from '/sponsors_images/milpas_logo.png'
 import nativelab from '/sponsors_images/nativelab_logo.png'
 import haas from '/sponsors_images/haas_logo.png'
 import vi_grade from '/sponsors_images/vi-grade_red_logo.png'
+import hesse_mechatronics from '/sponsors_images/hesse_mechatronics.png'
 const Sponsors = (): JSX.Element => {
   return (
     <div className='pt-16 w-full bg-sponsors'>
@@ -44,7 +45,10 @@ const Sponsors = (): JSX.Element => {
         </div>
         <div className='md:h-48 px-8 flex flex-col md:flex-row md:px-16 lg:px-24 w-full'>
           <div className='flex flex-row justify-center flex-1'>
-            <img src={milpasmotors} className='object-contain' alt='ansys' />
+            <img src={milpasmotors} className='object-contain' alt='milpasmotors' />
+          </div>
+          <div className='flex flex-row justify-center flex-1'>
+            <img src={hesse_mechatronics} className='object-contain' alt='hesse_mechatronics' />
           </div>
         </div>
 
