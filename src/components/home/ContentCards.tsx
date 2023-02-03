@@ -8,15 +8,15 @@ export default function ContentCards(): JSX.Element {
     <div className='bg-about-boxes py-4 px-4 lg:px-32 justify-between w-full min-h-[45rem] md:h-[50rem] flex flex-col md:flex-row'>
       <div className='rounded-3xl px-8 md:px-2 lg:px-8 py-8 h-full w-full md:w-1/3'>
         <div className='rounded-3xl bg-box h-full flex flex-col'>
-          <div className='rounded-3xl w-full h-64'>
+          <div className='rounded-3xl w-full'>
             <img
-              className='rounded-3xl object-cover w-full h-full'
+              className='rounded-3xl object-cover w-full h-64'
               src={newsletter}
               alt=''
             />
           </div>
           <div className='flex flex-row justify-center pt-4 text-white text-4xl'>
-            Newsletter
+						Newsletter 
           </div>
           <div className='overflow-y-auto w-full h-full md:h-3/5 flex flex-col justify-start'>
             <div className='text-xl text-white w-full flex flex-row'>
@@ -29,15 +29,15 @@ export default function ContentCards(): JSX.Element {
                 </p>
               </div>
             </div>
+						<div className="self-center box-signup p-2"><a href='https://forms.gle/mAoygCjFCafnCUuW8'>Click here to sign up!</a></div>
           </div>
-						<div className="self-center box-signup my-8 p-2"><a href='https://forms.gle/mAoygCjFCafnCUuW8'>Click here to sign up!</a></div>
         </div>
       </div>
       <div className='rounded-3xl px-8 md:px-2 lg:px-8 py-8 h-full w-full md:w-1/3'>
         <div className='rounded-3xl bg-box h-full flex flex-col'>
           <div className='rounded-3xl w-full h-64'>
             <img
-              className='rounded-3xl object-cover w-full h-full'
+              className='rounded-3xl object-cover w-full h-64'
               src={ourteam}
               alt=''
             />
@@ -64,7 +64,7 @@ export default function ContentCards(): JSX.Element {
         <div className='rounded-3xl bg-box h-full flex flex-col'>
           <div className='rounded-3xl w-full h-64'>
             <img
-              className='rounded-3xl object-cover w-full h-full'
+              className='rounded-3xl object-cover w-full h-64'
               src={sponsorships}
               alt=''
             />
