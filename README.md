@@ -5,7 +5,7 @@
 - Using draco gltf compression to improve the load time
 - Using as little javascript as possible
 
-The website is current hosted on Netlify: https://heartfelt-licorice-a6dcde.netlify.app/
+This website is hosted at ucsbgauchoracing.com
 
 This website is built using ReactJS and AstroJS.
 
