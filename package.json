@@ -33,6 +33,7 @@
     "@types/three": "^0.143.0",
     "cypress": "^10.0.3",
     "googleapis": "^107.0.0",
+    "json5": "^2.2.3",
     "styled-components": "^5.3.5",
     "styled-icons": "^10.45.0",
     "three": "^0.143.0",
