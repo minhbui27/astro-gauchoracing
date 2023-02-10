@@ -15,6 +15,8 @@ import haas from '/sponsors_images/haas_logo.png'
 import vi_grade from '/sponsors_images/vi-grade_red_logo.png'
 import ucsbfinance from '/sponsors_images/ucsbfinanceandbusiness.png'
 import hesse_mechatronics from '/sponsors_images/hesse_mechatronics.png'
+import pepsico_logo from '/sponsors_images/pepsico_logo.png'
+import woodstocks_logo from '/sponsors_images/woodstocks_logo.png'
 const Sponsors = (): JSX.Element => {
   return (
     <div className='pt-16 w-full bg-sponsors'>
@@ -58,7 +60,10 @@ const Sponsors = (): JSX.Element => {
             <img src={milpasmotors} className='object-contain' alt='milpasmotors' />
           </div>
           <div className='flex flex-row justify-center flex-1'>
-            <img src={hesse_mechatronics} className='object-contain' alt='hesse_mechatronics' />
+            <img src={hesse_mechatronics} className='object-contain' alt='hesse mechatronics' />
+          </div>
+          <div className='flex flex-row justify-center flex-1'>
+            <img src={woodstocks_logo} className='object-contain' alt='woodstocks pizza' />
           </div>
         </div>
 
@@ -74,6 +79,9 @@ const Sponsors = (): JSX.Element => {
         <div className='md:h-48 px-8 flex flex-col md:flex-row md:px-16 lg:px-24 w-full'>
           <div className='flex flex-row justify-center flex-1'>
             <img src={nativelab} className='object-contain' alt='ansys' />
+          </div>
+          <div className='flex flex-row justify-center flex-1'>
+            <img src={pepsico_logo} className='object-contain' alt='pepsico' />
           </div>
         </div>
 
