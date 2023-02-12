@@ -1,0 +1,10 @@
+$alpha: 0.25;
+.bg-shopbox {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, $alpha) 0%,
+    rgba(9, 9, 121, $alpha) 48%,
+    rgba(73, 160, 157, $alpha) 100%
+  );
+}

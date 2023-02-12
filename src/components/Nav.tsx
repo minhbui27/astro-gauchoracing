@@ -161,6 +161,17 @@ const DesktopMenu = (): JSX.Element => {
             >
               Donate
             </a>
+            <a
+              href='/shop'
+              className={
+                (curPage === 'Pre-order'
+                  ? 'item-selected-bg'
+                  : 'hover:bg-lightpink text-items') +
+                ' px-3 py-2 rounded-md md:text-xs lg:text-sm font-medium'
+              }
+            >
+							Pre-Order Merch! 
+            </a>
           </div>
         </div>
       </div>
@@ -274,6 +285,18 @@ const MobileMenu = (): JSX.Element => {
             }
           >
             Donate
+          </motion.a>
+          <motion.a
+            variants={anchorAnimation}
+            href='/shop'
+            className={
+              (curPage === 'Pre-Order'
+                ? 'bg-lightpink text-items'
+                : 'text-gray-300') +
+              ' block px-3 py-2 rounded-md text-base font-medium'
+            }
+          >
+						Pre-Order Merch! 
           </motion.a>
         </motion.div>
       </motion.div>
