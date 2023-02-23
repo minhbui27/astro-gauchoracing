@@ -68,7 +68,7 @@ export default function About(): JSX.Element {
           {/* <p>While we will be reviving a UCSB Engineering tradition after a five-year hiatus, we wish to make it clear that participation in our team is not limited to engineering students.</p> */}
         </div>
       </div>
-      <div className='bg-officers h-screen w-full'>
+      <div className='bg-officers min-h-screen w-full'>
         <div className='flex flex-col w-full h-full'>
           <div className='mx-4 my-8 text-officers text-7xl flex flex-row justify-center'>
             Our Officers
@@ -76,7 +76,9 @@ export default function About(): JSX.Element {
           <div className='text-officers-info text-xl md:text-3xl mx-4 md:mx-16 my-8 flex flex-row justify-center'>
             From Left to Right: Andrew Peng (Treasurer), Torin Schlunk (Secretary), Cesar Castillo (Chief Engineer), Nicholas Rivelle (President), Tien Nguyen (Controls Co-Lead), Raaghav Thirumaligai (Event Coordinator) 
           </div>
-					<img className='object-scale-down h-2/3 w-full' src={our_officers}/>
+					<div className='p-8 md:p-32 h-1/3'>
+						<img className='object-scale-down' src={our_officers}/>
+					</div>
         </div>
       </div>
     </div>
