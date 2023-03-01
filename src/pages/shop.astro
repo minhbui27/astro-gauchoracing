@@ -16,30 +16,8 @@ import Footer from '../components/Footer.astro'
 <body>
 	<div class="relative">
 		<div class="fixed z-50 w-screen">
-			<Nav currentPage={"Pre-order"} client:visible />
+			<Nav currentPage={"Shop"} client:visible />
 		</div>
-			<div class="w-full h-screen bg-navy flex flex-col justify-center">
-				<!-- this is the container of the donate text and the donate button -->
-				<div class="w-full min-h-2/5 flex flex-row justify-center">
-				<!-- the content in each box is centered using css grid -->
-					<div
-						class="bg-shopbox text-white rounded-2xl w-full md:w-1/3 h-full grid place-content-center"
-					>
-						<div class="mx-4 grid place-content-center">
-							<h1 class="my-2 text-md md:text-xl lg:text-2xl"> Pre Order Our Merch! </h1>
-							<p class="text-md md:text-md lg:text-lg">
-								Support us by pre-ordering our awesome merch! All orders will be available for pickup at Gaucho Racing general meetings in approximately 4 weeks (early March).
-							</p>
-						</div>
-						<div class="md:my-4 lg:my-8 grid place-content-center">
-							<a href={"https://forms.gle/ZGHjk2VTq5BwA26G7"} class="cursor-pointer bg-cyan rounded-md p-4 md:p-2 lg:p-4">Pre Order Now!</a>
-						</div>
-					</div>
-				</div>
-				<!-- <div class='flex-none shrink-0 w-1/2 lg:w-1/3 h-full'> -->
-				<!--     <img class='py-2 object-contain h-full w-full'/> -->
-				<!-- </div> -->
-			</div>
 		<Footer />
 	</div>
 </body>
