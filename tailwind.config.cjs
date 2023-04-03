@@ -11,6 +11,7 @@ module.exports = {
 	'cyan': '#0093AC',
 	'white': 'white',
 	'black': 'black',
+	'gray': '#EBECF0',
 	},
     extend: {},
   },

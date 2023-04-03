@@ -161,7 +161,6 @@ const DesktopMenu = (): JSX.Element => {
             >
               Donate
             </a>
-						{/*
             <a
               href='/shop'
               className={
@@ -173,7 +172,6 @@ const DesktopMenu = (): JSX.Element => {
             >
 							Buy Merch!	
             </a>
-						*/}
           </div>
         </div>
       </div>
@@ -288,7 +286,6 @@ const MobileMenu = (): JSX.Element => {
           >
             Donate
           </motion.a>
-					{/*
           <motion.a
             variants={anchorAnimation}
             href='/shop'
@@ -301,7 +298,6 @@ const MobileMenu = (): JSX.Element => {
           >
 						Buy Merch! 
           </motion.a>
-					*/}
         </motion.div>
       </motion.div>
     </>
