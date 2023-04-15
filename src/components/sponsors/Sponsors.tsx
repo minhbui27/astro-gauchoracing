@@ -17,6 +17,7 @@ import ucsbfinance from '/sponsors_images/ucsbfinanceandbusiness.png'
 import hesse_mechatronics from '/sponsors_images/hesse_mechatronics.png'
 import pepsico_logo from '/sponsors_images/pepsico_logo.png'
 import woodstocks_logo from '/sponsors_images/woodstocks_logo.png'
+import anguiano_racing from '/sponsors_images/anguiano_racing.jpg'
 const Sponsors = (): JSX.Element => {
   return (
     <div className='pt-16 w-full bg-sponsors'>
@@ -47,6 +48,13 @@ const Sponsors = (): JSX.Element => {
               src={ucsbfinance}
               className='object-contain'
               alt='UCSB Finance & Business Committee'
+            />
+          </div>
+          <div className='flex flex-row justify-center flex-1'>
+            <img
+              src={anguiano_racing}
+              className='object-contain'
+              alt='Anguiano Racing'
             />
           </div>
         </div>
