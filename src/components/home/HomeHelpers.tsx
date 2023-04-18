@@ -17,8 +17,8 @@ export default function ScrollingImages(props: ImagesProps): JSX.Element {
         return (
           <div key={i} className='flex-none shrink-0 w-1/2 lg:w-1/3 h-full'>
             <motion.img
-              initial={{ x: props.direction ? "-300%" : 0 }}
-              animate={{ x: props.direction ? 0 : "-300%"}}
+              initial={{ x: props.direction ? "-400%" : 0 }}
+              animate={{ x: props.direction ? 0 : "-400%"}}
               transition={{
                 ease: 'linear',
                 repeat: Infinity,

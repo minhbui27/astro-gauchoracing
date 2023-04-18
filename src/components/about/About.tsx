@@ -70,13 +70,13 @@ export default function About(): JSX.Element {
       </div>
       <div className='bg-officers min-h-screen w-full'>
         <div className='flex flex-col w-full h-full'>
-          <div className='mx-4 my-8 text-officers text-7xl flex flex-row justify-center'>
+          <div className='mx-4 my-4 text-officers text-7xl flex flex-row justify-center'>
             Our Officers
           </div>
-          <div className='text-officers-info text-xl md:text-3xl mx-4 md:mx-16 my-8 flex flex-row justify-center'>
-            From Left to Right: Andrew Peng (Treasurer), Torin Schlunk (Secretary), Cesar Castillo (Chief Engineer), Nicholas Rivelle (President), Tien Nguyen (Controls Co-Lead), Raaghav Thirumaligai (Event Coordinator) 
+          <div className='text-officers-info text-xl md:text-3xl mx-4 md:mx-16 mb-4 flex flex-row justify-center'>
+            From Left to Right: Amitha Bhat, Andrew Peng, Dylan Pratt, Tien Nguyen, Cesar Castillo, Jason Wei, Aran Sandhu, Nicholas Rivelle, Raaghav Thirumaligai, Joshua Thomas, Thomas Yu, Anirudh Kumar, Stephen Wong, Roger Torres Aguilar, Sabrina Fox.
           </div>
-					<div className='p-8 md:p-32 h-1/3'>
+					<div className='p-8 md:p-16 h-1/3'>
 						<img className='object-scale-down' src={our_officers}/>
 					</div>
         </div>
