@@ -76,7 +76,7 @@ export default function About(): JSX.Element {
           <div className='text-officers-info text-xl md:text-3xl mx-4 md:mx-16 mb-4 flex flex-row justify-center'>
             From Left to Right: Amitha Bhat, Andrew Peng, Dylan Pratt, Tien Nguyen, Cesar Castillo, Jason Wei, Aran Sandhu, Nicholas Rivelle, Raaghav Thirumaligai, Joshua Thomas, Thomas Yu, Anirudh Kumar, Stephen Wong, Roger Torres Aguilar, Sabrina Fox.
           </div>
-					<div className='p-8 md:p-16 h-1/3'>
+					<div className='flex flex-col justify-center p-8 md:p-16 h-1/3'>
 						<img className='object-scale-down' src={our_officers}/>
 					</div>
         </div>

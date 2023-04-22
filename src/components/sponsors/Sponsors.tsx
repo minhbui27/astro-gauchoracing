@@ -18,6 +18,7 @@ import hesse_mechatronics from '/sponsors_images/hesse_mechatronics.png'
 import pepsico_logo from '/sponsors_images/pepsico_logo.png'
 import woodstocks_logo from '/sponsors_images/woodstocks_logo.png'
 import anguiano_racing from '/sponsors_images/anguiano_racing.jpg'
+import dtac from '/sponsors_images/dtac_logo.png'
 const Sponsors = (): JSX.Element => {
   return (
     <div className='pt-16 w-full bg-sponsors'>
@@ -90,6 +91,9 @@ const Sponsors = (): JSX.Element => {
           </div>
           <div className='flex flex-row justify-center flex-1'>
             <img src={pepsico_logo} className='object-contain' alt='pepsico' />
+          </div>
+          <div className='flex flex-row justify-center flex-1'>
+            <img src={dtac} className='object-contain' alt='Drive Toward a Cure' />
           </div>
         </div>
 
