@@ -19,6 +19,7 @@ import pepsico_logo from '/sponsors_images/pepsico_logo.png'
 import woodstocks_logo from '/sponsors_images/woodstocks_logo.png'
 import anguiano_racing from '/sponsors_images/anguiano_racing.jpg'
 import dtac from '/sponsors_images/dtac_logo.png'
+import freestyletrailerco_logo from '/sponsors_images/freestyletrailerco_logo.png'
 const Sponsors = (): JSX.Element => {
   return (
     <div className='pt-16 w-full bg-sponsors'>
@@ -79,6 +80,11 @@ const Sponsors = (): JSX.Element => {
         {/* Silver sponsors */}
         <div className='text-center justify-center text-4xl md:text-6xl lg:text-7xl flex flex-col our-sponsors h-32 w-full'>
           Silver Sponsors
+        </div>
+        <div className='md:h-48 px-8 flex flex-col md:flex-row md:px-16 lg:px-24 w-full'>
+          <div className='flex flex-row justify-center flex-1'>
+            <img src={freestyletrailerco_logo} className='object-contain' alt='Freestyle Trailer Co' />
+          </div>
         </div>
 
         {/* Bronze sponsors */}
