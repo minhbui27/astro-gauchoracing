@@ -21,6 +21,7 @@ import anguiano_racing from '/sponsors_images/anguiano_racing.jpg'
 import dtac from '/sponsors_images/dtac_logo.png'
 import freestyletrailerco_logo from '/sponsors_images/freestyletrailerco_logo.png'
 import noctunalwelding_logo from '/sponsors_images/noctunalwelding_logo.png'
+import singlestore_logo from '/sponsors_images/singlestore_logo.png'
 const Sponsors = (): JSX.Element => {
   return (
     <div className='pt-16 w-full bg-sponsors'>
@@ -58,6 +59,13 @@ const Sponsors = (): JSX.Element => {
               src={anguiano_racing}
               className='object-contain'
               alt='Anguiano Racing'
+            />
+          </div>
+          <div className='flex flex-row justify-center flex-1'>
+            <img
+              src={singlestore_logo}
+              className='object-contain'
+              alt='SingleStore'
             />
           </div>
         </div>
