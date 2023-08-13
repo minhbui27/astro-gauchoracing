@@ -8,7 +8,6 @@ export const ImageSlider = (props:ImageProps):JSX.Element => {
 	// setting current index and on button click update idx appropriately
 	const [currentIdx,setCurrentIdx] = React.useState<number | null>(0)
 	const imgList = props.imgList
-
 	// logic to move between the images, accessing via index
 	const handleNext = () => {
 		currentIdx + 1 >= props.imgList.length ? setCurrentIdx(0) : setCurrentIdx(currentIdx => currentIdx + 1)
@@ -20,8 +19,12 @@ export const ImageSlider = (props:ImageProps):JSX.Element => {
 		<div>
 			<button onClick={handleNext}>next</button>
 			<button onClick={handlePrev}>prev</button>
-			<div className='flex flex-row'>
-				{imgList.map((img,idx) => currentIdx === imgList.indexOf(`${img}`) ? <motion.img animate={{opacity: 1}} key={idx} src={`/shop_images/${img}`}/> : <motion.img animate={{opacity: 0.5}} key={idx} src={`/shop_images/${img}`}/>) }
+			<div className='overflow-hidden w-32 flex flex-row'>
+				{imgList.map((img,idx) => currentIdx === imgList.indexOf(`${img}`) ? 
+					<motion.img className='object-cover' animate={{x:`-${idx*100}%`, opacity: 1}} 
+						transition={{ease:'linear', duration: 0.5/idx,}}
+						key={idx} src={`/shop_images/${img}`}/> :
+					<motion.img animate={{x:`-${idx*100}%`, opacity: 0}} key={idx} src={`/shop_images/${img}`}/>) }
 			</div>
 		</div>
 	)
