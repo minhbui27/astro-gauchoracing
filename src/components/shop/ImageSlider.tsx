@@ -15,20 +15,20 @@ export const ImageSlider = (props:ImageProps):JSX.Element => {
 		currentIdx + 1 >= props.imgList.length ? setCurrentIdx(0) : setCurrentIdx(currentIdx => currentIdx + 1)
 		// making sure that on the last element in the image the overflow goes back to zero index
 		const nextIdx = currentIdx === props.imgList.length-1 ? 0 : currentIdx + 1
-		animate(scope.current, {x: `-${(nextIdx)*100/props.imgList.length}%`},{ease: "linear", duration:0.25*nextIdx})
+		animate(scope.current, {x: `-${(nextIdx)*100}%`},{ease: "linear", duration:0.25*nextIdx})
 	}
 	const handlePrev = () => {
 		currentIdx - 1 < 0 ? setCurrentIdx(props.imgList.length - 1) : setCurrentIdx(currentIdx => currentIdx - 1)
 		const prevIdx = currentIdx === 0 ? props.imgList.length-1 : currentIdx - 1
-		animate(scope.current, {x: `-${(prevIdx)*100/props.imgList.length}%`},{ease: "linear", duration:0.25*prevIdx})
+		animate(scope.current, {x: `-${(prevIdx)*100}%`},{ease: "linear", duration:0.25*prevIdx})
 	}
 	console.log(currentIdx)
 	return(
 		<div>
 			<button onClick={handleNext}>next</button>
 			<button onClick={handlePrev}>prev</button>
-			<div className='bg-cyan w-64 h-64 flex flex-row'>
-				<motion.div ref={scope} className='flex flex-row justify-start'>
+			<div className='overflow-hidden bg-cyan w-64 h-64 flex flex-row justify-center'>
+				<motion.div ref={scope} className='w-48 flex flex-wrap flex-col justify-start'>
 				{imgList.map((img,idx) => 
 						<div key={idx} className='w-48'>
 						<img className='object-cover w-48 h-64'src={`/shop_images/${img}`}/>
