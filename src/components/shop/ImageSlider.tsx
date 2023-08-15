@@ -15,11 +15,12 @@ export const ImageSlider = (props:ImageProps):JSX.Element => {
 		currentIdx + 1 >= props.imgList.length ? setCurrentIdx(0) : setCurrentIdx(currentIdx => currentIdx + 1)
 		// making sure that on the last element in the image the overflow goes back to zero index
 		const nextIdx = currentIdx === props.imgList.length-1 ? 0 : currentIdx + 1
-		animate(scope.current, {x: `-${(nextIdx)*100/props.imgList.length}%`},{ease: "linear", duration:0.25*currentIdx})
+		animate(scope.current, {x: `-${(nextIdx)*100/props.imgList.length}%`},{ease: "linear", duration:0.25*nextIdx})
 	}
 	const handlePrev = () => {
 		currentIdx - 1 < 0 ? setCurrentIdx(props.imgList.length - 1) : setCurrentIdx(currentIdx => currentIdx - 1)
-		animate(scope.current, {x: `${(currentIdx-1)*100/props.imgList.length}%`},{ease: "linear", duration:0.25*currentIdx})
+		const prevIdx = currentIdx === 0 ? props.imgList.length-1 : currentIdx - 1
+		animate(scope.current, {x: `-${(prevIdx)*100/props.imgList.length}%`},{ease: "linear", duration:0.25*prevIdx})
 	}
 	console.log(currentIdx)
 	return(
