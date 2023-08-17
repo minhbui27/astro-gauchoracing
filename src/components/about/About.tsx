@@ -51,18 +51,7 @@ export default function About(): JSX.Element {
       <div className='py-8 flex flex-col sm:flex-row h-full w-full'>
         <div className='mx-4 sm:mx-12 md:mx-32 content-text text-xl md:text-3xl text-start flex justify-start px-4 flex-col'>
           <p>
-            Gaucho Racing aims to enable students to gain hands-on experience in
-            all phases of the engineering process and propel them forward into
-            their careers. As part of UCSB’s official SAE International Student
-            Chapter, our main focus is to participate each year in the Formula
-            SAE Electric Competition. This involves students working together as
-            a team to research, design, and manufacture a single seater electric
-            race car from the ground up. Our team is also responsible for
-            funding this project each year which will connect our students with
-            industry sponsors and build crucial relationships for our success.
-            Through this project, students will gain essential engineering and
-            networking skills in demand in this industry and be prepared to
-            launch their futures in engineering.
+						Gaucho Racing aims to enable students to gain hands-on experience in all phases of the engineering process and propel them forward into their careers.
           </p>
 
           {/* <p>While we will be reviving a UCSB Engineering tradition after a five-year hiatus, we wish to make it clear that participation in our team is not limited to engineering students.</p> */}
