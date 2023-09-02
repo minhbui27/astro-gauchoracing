@@ -1,8 +1,19 @@
 import * as React from 'react'
 import '../../styles/about.scss'
+// imgs 1,2,3 are placeholder ones used to test display
 import img1 from '/about_images/img1.jpg'
 import img2 from '/about_images/img2.jpg'
 import img3 from '/about_images/img3.jpg'
+
+import img4 from '/about_images/img4.jpg'
+import img5 from '/about_images/img5.jpg'
+import img6 from '/about_images/img6.jpg'
+import img7 from '/about_images/img7.jpg'
+import img8 from '/about_images/img8.jpg'
+import img9 from '/about_images/img9.jpg'
+import img10 from '/about_images/img10.jpg'
+import img11 from '/about_images/img11.jpg'
+import img12 from '/about_images/img12.jpg'
 import our_officers from '/our_officers.jpg'
 export default function About(): JSX.Element {
   return (
@@ -13,7 +24,7 @@ export default function About(): JSX.Element {
       </div>
       <div className='px-4 sm:px-16 md:px-32 flex flex-col lg:flex-row h-full w-full'>
         <div className='flex flex-col w-full lg:w-1/2'>
-          <div className='content-text text-xl md:text-3xl text-start flex justify-start px-4 flex-col'>
+          <div className='content-text text-xl md:text-2xl text-start flex justify-start px-4 flex-col'>
             <p>
               Gaucho Racing is the continuation of a long history of motorsports
               in Santa Barbara. Though teams have come and gone, it is our goal
@@ -33,15 +44,19 @@ export default function About(): JSX.Element {
         </div>
         <div className='order-first flex flex-row flex-wrap w-full lg:w-1/2'>
           <div className='p-2 space-y-2 justify-center flex flex-1 flex-col'>
-            <img src={img2} />
+            <img src={img6} />
+            <img src={img7} />
+            <img src={img10} />
           </div>
           <div className='p-2 space-y-2 justify-center flex flex-1 flex-col'>
-            <img src={img1} />
-            <img src={img2} />
+            <img src={img9} />
+            <img src={img8} />
+            <img src={img11} />
           </div>
           <div className='p-2 space-y-2 justify-center flex flex-1 flex-col'>
-            <img src={img1} />
-            <img src={img3} />
+            <img src={img4} />
+            <img src={img5} />
+            <img src={img12} />
           </div>
         </div>
       </div>

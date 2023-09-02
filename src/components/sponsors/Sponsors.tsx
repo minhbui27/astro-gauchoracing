@@ -22,6 +22,7 @@ import dtac from '/sponsors_images/dtac_logo.png'
 import freestyletrailerco_logo from '/sponsors_images/freestyletrailerco_logo.png'
 import noctunalwelding_logo from '/sponsors_images/noctunalwelding_logo.png'
 import singlestore_logo from '/sponsors_images/singlestore_logo.png'
+import firefly_aerospace_logo from '/sponsors_images/firefly_aerospace.png'
 const Sponsors = (): JSX.Element => {
   return (
     <div className='pt-16 w-full bg-sponsors'>
@@ -69,7 +70,15 @@ const Sponsors = (): JSX.Element => {
             />
           </div>
         </div>
-
+				<div className='md:h-48 px-8 flex flex-col md:flex-row md:px-16 lg:px-24 w-full'>
+          <div className='flex flex-row justify-center flex-1'>
+            <img
+              src={firefly_aerospace_logo}
+              className='object-contain'
+              alt='FireFly Aerospace'
+            />
+          </div>
+        </div>
         {/* Gold sponsors */}
         <div className='text-center justify-center text-4xl md:text-6xl lg:text-7xl flex flex-col our-sponsors h-32 w-full'>
           Gold Sponsors
