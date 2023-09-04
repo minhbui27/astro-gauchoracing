@@ -1,6 +1,13 @@
 import * as React from 'react'
 import {motion, useAnimate} from 'framer-motion'
 import {ChevronRight, ChevronLeft} from '@styled-icons/bootstrap'
+/*
+	This component handles the image slider in the shop page that has the option to move left or right.
+	Some notes:
+		- If the size of the string input array doesn't exceed 1, then the arrows will disappear
+		- The array of strings passed in as props contains strings that is the exact file names of images already existing in /public/shop_images. Otherwise will throw error
+*/
+
 interface ImageProps {
 	imgList: string[]
 }
@@ -25,11 +32,11 @@ export const ImageSlider = (props:ImageProps):JSX.Element => {
 	console.log(currentIdx)
 	return(
 		<div>
-			<div className='flex flex-row'>
-				<div className='flex flex-col justify-center w-8 bg-lightgray rounded-tl-md rounded-bl-md'>
+			<div className='flex overflow-hidden flex-row bg-lightgray rounded-t-md rounded-b-md'>
+				<div className={`${props.imgList.length > 1 ? "opacity-100"  : "opacity-0" } z-10 flex flex-col justify-center w-8`}>
 					<ChevronLeft className="cursor-pointer" onClick={handlePrev}/>
 				</div>
-				<div className='overflow-hidden bg-lightgray w-48 h-64 flex flex-row justify-center'>
+				<div className='bg-lightgray w-56 h-64 flex flex-row justify-center'>
 					<motion.div ref={scope} className='w-48 flex flex-wrap flex-col justify-start'>
 					{/* Mapping over all images sent as props inside a contain with key idx. In theory this should scale */}
 					{imgList.map((img,idx) => 
@@ -39,7 +46,7 @@ export const ImageSlider = (props:ImageProps):JSX.Element => {
 					)}
 					</motion.div>
 				</div>
-				<div className='flex flex-col justify-center w-8 bg-lightgray rounded-tr-md rounded-br-md'>
+				<div className={`${props.imgList.length > 1 ? "opacity-100"  : "opacity-0" } z-10 flex flex-col justify-center w-8`}>
 					<ChevronRight className="cursor-pointer" onClick={handleNext}/>
 				</div>
 			</div>
