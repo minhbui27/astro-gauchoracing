@@ -7,6 +7,23 @@ export default function Shop(): JSX.Element {
 			<div className='welcome-text text-3xl flex flex-row justify-center'>
 				Welcome to our shop!
 			</div>
+			 <section>
+    <div className="product">
+      <img
+        src="https://i.imgur.com/EHyR2nP.png"
+        alt="The cover of Stubborn Attachments"
+      />
+      <div className="description">
+      <h3>Stubborn Attachments</h3>
+      <h5>$20.00</h5>
+      </div>
+    </div>
+    <form action="/create-checkout-session" method="POST">
+      <button type="submit">
+        Checkout
+      </button>
+    </form>
+  </section>
 			<div className='px-16 min-h-screen w-full flex flex-row justify-center'>
 				<div className='space-y-8 md:space-y-0 flex row flex-wrap p-8 min-h-screen bg-navy'>
 					{/*images must already be present in /public/shop_images*/}
