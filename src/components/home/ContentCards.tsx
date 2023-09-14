@@ -1,7 +1,7 @@
 import * as React from 'react'
-import ourteam from '/home_images/ourteam.jpg'
-import sponsorships from '/home_images/sponsorships.jpg'
-import newsletter from '/home_images/newsletter.jpg'
+const ourteam = '/home_images/ourteam.jpg'
+const sponsorships = '/home_images/sponsorships.jpg'
+const newsletter = '/home_images/newsletter.jpg'
 import '../../styles/Home.scss'
 export default function ContentCards(): JSX.Element {
   return (

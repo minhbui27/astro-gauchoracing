@@ -9,12 +9,12 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/react": "^1.0.0",
-    "@astrojs/tailwind": "^1.0.0",
+    "@astrojs/react": "^3.0.2",
+    "@astrojs/tailwind": "^5.0.0",
     "@types/react": "^18.0.17",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
-    "astro": "^1.0.0",
+    "astro": "^3.0.13",
     "astro-xelement": "^3.2.0",
     "eslint": "^8.22.0",
     "eslint-plugin-react": "^7.30.1",
@@ -22,7 +22,8 @@
     "prettier-plugin-astro": "^0.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.54.4"
+    "sass": "^1.54.4",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
@@ -36,7 +37,7 @@
     "json5": "^2.2.3",
     "styled-components": "^5.3.5",
     "styled-icons": "^10.45.0",
-    "three": "^0.143.0",
-    "typescript": "^4.7.4"
+    "tailwindcss": "^3.3.3",
+    "three": "^0.143.0"
   }
 }
